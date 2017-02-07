@@ -5,27 +5,39 @@
 		<meta /> <!-- self closing element, doesn't need an opening / closing pair, allows you put attributes inside -->
 		<!-- attributes are the variables of the HTML world -->
 		<meta charset="utf-8" /> <!--  element = "meta"; attribute = "charset"; attribute value = "utf-8" -->
+		<!-- CSS Selectors: ID selectors and class selectors (begin with '.') -->
+		<style> 
+			h1 {
+				color: orange;
+				text-align: center;
+			}
+			p {
+				font-size: 18px;
+			}
+			.highlight {
+				background: #f0f099;
+			}
+			.red {
+				color: red;
+			}
+			.green {
+				color: green;
+			}
+			.blue {
+				color: blue;
+			}
+		</style>
 	</head>
 	<body>
-		<h1 style="color: orange;">Hello Internet!</h1> <!-- heading element... goes from h1 to h6 -->
+		<h1>Hello Internet!</h1> <!-- heading element... goes from h1 to h6 -->
 		<div>
-			<p style="font-size: 18px;">Welcome to my website! It is currently a <span>work in progress</span> as I learn <strong>HTML</strong> and <strong>CSS</strong> from this <em>excellent</em> book I'm learning from.</p> <!-- paragraph element -->
+			<p>Welcome to my website! It is currently a work in progress as I learn <strong class="highlight red">HTML</strong> and <strong class="highlight green">CSS</strong> from this <em class="highlight blue">excellent</em> book I'm learning from.</p> <!-- paragraph element -->
 		</div>
 	</body>
 </html>
 
 <!--
-the W3C validator = https://validator.w3.org/nu/#textarea
-
-ELEMENTS
-strong = Visibly changes the wrapped text to be bold. Text will have a stronger importance than the surrounding text.
-em = Visibly changes the wrapped text to be italicized. Demonstrates what part of the sentence is to receive emphasis.
-b = Visibly changes the wrapped text to be bold. Does not affect the meaning of the content as the strong element does.
-i = Visibly changes the wrapped text to be italicized. Does not affect the meaning of the content as the em element does.
-sub = Adjusts the position of the text to be lower than the text around it. Short for subscript. Example: Carbon dioxide has a chemical formula of CO2.
-sup = Adjusts the position of the text to be higher than the text around it. Short for superscript. Example: Multiply your result by 10^3.
-
-HTML Containers = div + span elements... don't convey additional meaning
-div = block elements by default
-span = inline
+-CSS became its own language out of necessity (embedding stylistic components in each quickly becomes too verbose)
+-Leads to the style element <style type="text/css">. This tells the browser to treat anything in the <style> element as CSS. Modern browsers assume <style> leads CSS
+-
 -->
