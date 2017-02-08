@@ -11,5 +11,13 @@ puts 'Good-bye.'
 
 puts 'I like' + 'apple pie.' # string arithmatic
 
+puts 'I like ' + 'apple pie.'
+puts 'I like' + ' apple pie.'
 
+puts 'blink ' * 4 # 'blink blink blink blink'
 
+puts  12  +  12
+puts '12' + '12'
+puts '12  +  12'
+
+puts 'You\'re swell!' # escape characters
