@@ -117,6 +117,66 @@ puts squareThenDouble.call(5)
 
 # Passing blocks (not procs) into methods
 
+# So far... to use Procs you need to:
 # 1. defining the method (def ...)
 # 2. making the proc (Proc.new)
-# 3. 
+# 3. calling the method with a Proc
+# ... should probably only need to define the method and pass a block directly into the method without the Proc
+
+class Array
+	def eachEven(&wasABlock_nowAProc)
+		# We start with "true" because arrays start with 0, which is even.
+		isEven = true
+
+		self.each do |object|
+			if isEven
+				wasABlock_nowAProc.call object
+			end
+
+			isEven = (not isEven) # Toggle from even to odd, or odd to even.
+		end
+	end
+end
+
+['apple', 'bad apple', 'cherry', 'durian'].eachEven do |fruit|
+	puts 'Yum! I just love ' + fruit + 'pies, don\'t you?'
+end
+
+# Remember, we are getting the even-numbered elements
+# of the array, all of which happen to be odd numbers,
+# just because I like to cause problems like that.
+[1, 2, 3, 4, 5].eachEven do |oddBall|
+  puts oddBall.to_s+' is NOT an even number!'
+end
+
+
+# helps show the amount of time it takes to execute a function
+
+def profile descriptionOfBlock, &block
+  startTime = Time.now
+
+  block.call
+
+  duration = Time.now - startTime
+
+  puts descriptionOfBlock+':  '+duration.to_s+' seconds'
+end
+
+profile '25000 doublings' do
+  number = 1
+
+  25000.times do
+    number = number + number
+  end
+
+  # Show the number of digits in this HUGE number.
+  puts number.to_s.length.to_s+' digits'
+end
+
+profile 'count to a million' do
+  number = 0
+
+  1000000.times do
+    number = number + 1
+  end
+end
