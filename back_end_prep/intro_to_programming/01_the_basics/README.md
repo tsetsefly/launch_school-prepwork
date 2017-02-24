@@ -92,5 +92,10 @@ irb :002 > {:dog => 'barks', :cat => 'meows', :pig => 'oinks'}[:cat]
 => "meows"
 ```
 
-### Expressions and Return
+## Expressions and Return
 
+When you type an expression, it always returns something. In irb the return is denoted by a ```=>``` (hash rocket).
+
+## puts vs. return
+
+Puts is printing to the console while return shows what is returned by the expressions, functions, operations computed.
