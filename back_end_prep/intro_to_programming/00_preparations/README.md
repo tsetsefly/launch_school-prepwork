@@ -1,4 +1,4 @@
-# Preparation
+# [Preparations](https://launchschool.com/books/ruby/read/preparations)
 
 ## Methods
 In documentation, methods are either denoted by a ```::``` or a ```#```
