@@ -9,5 +9,11 @@ In documentation, methods are either denoted by a ```::``` or a ```#```
 
 * Instance methods: can be applied to any instance of the class (Ex.
 ```ruby
-world wide web".split
-```)
+"world wide web".split
+```
+)
+* Class methods: are called directly from the class (Ex.
+```ruby
+String.new("blue")
+```
+)
