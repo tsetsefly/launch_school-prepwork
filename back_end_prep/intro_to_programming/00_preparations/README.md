@@ -43,6 +43,7 @@ Interactive environment for ruby at the command line.
 
 [Instructions for installing rbenv](https://github.com/rbenv/rbenv)
 * Be mindful of what shell you use (bash, zsh, etc)
+* **Caution:** some of the commands will overwrite your ~/.zshrc file
 * Also install [ruby-build](https://github.com/rbenv/ruby-build#readme)
 * Remember to reset your terminal session
 
