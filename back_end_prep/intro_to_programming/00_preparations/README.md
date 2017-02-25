@@ -46,6 +46,7 @@ Interactive environment for ruby at the command line.
 * **Caution:** some of the commands will overwrite your ~/.zshrc file
 * Also install [ruby-build](https://github.com/rbenv/ruby-build#readme)
 * Remember to reset your terminal session
+* Reset ~/.zshrc with ```source ~/.zshrc``` in zsh
 
 ### Usage
 ```
