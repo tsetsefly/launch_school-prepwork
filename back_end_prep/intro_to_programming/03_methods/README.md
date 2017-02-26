@@ -45,5 +45,6 @@ Stylistic choice to include parenthesis or not for readability.
 ## ```obj.method``` or ```method(obj)```
 
 There are two main ways to use methods:
+
 1. ```some_method(obj)``` is for when you send arguments to a method
 2. Explicit caller: ```a_caller.some_method(obj)```
