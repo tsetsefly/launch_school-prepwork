@@ -92,3 +92,17 @@ Start the variable with two ```@@```. These variables are accessible by instance
 
 ### Instance variables
 
+Start the variable with one ```@```. Variables are available throughout the current instance of the parent class. They can cross some scope boundaries but not all.
+
+```ruby
+@var = 'I am available throughout the current instance of this class.'
+```
+
+### Local variables
+
+Most common form of variables. Obey all scope boundaries.
+
+```ruby
+var = 'I must be passed around to cross scope boundaries.'
+```
+
