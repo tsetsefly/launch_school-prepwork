@@ -48,3 +48,24 @@ There are two main ways to use methods:
 
 1. ```some_method(obj)``` is for when you send arguments to a method
 2. Explicit caller: ```a_caller.some_method(obj)```
+
+## Mutating the caller
+
+When calling a method, the argument is permanetly altered.
+
+```ruby
+def some_method(number)
+  number = 7 # this is implicitly returned by the method
+end
+
+a = 5
+some_method(a)
+puts a
+```
+
+The output of the above is ```5``` because the scope of ```number``` is inside of the method ```some_method```. So, ```a```'s value is not reassigned. The caller is **not mutated** in this example. Methods cannot modify arguments passed into them permanently.
+
+Exception to this rule is when you ***mutate the caller***.
+
+
+
