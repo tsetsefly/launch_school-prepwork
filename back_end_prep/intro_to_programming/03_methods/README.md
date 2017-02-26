@@ -67,5 +67,36 @@ The output of the above is ```5``` because the scope of ```number``` is inside o
 
 Exception to this rule is when you ***mutate the caller***.
 
+```ruby
+a = [1, 2, 3]
+
+def mutate(array)
+  array.pop
+end
+
+p "Before mutate method: #{a}"
+mutate(a)
+p "After mutate method: #{a}"
+```
+
+The ```pop``` function *mutates the caller*
+
+Compare with the ```last``` function which does NOT mutate the caller.
+
+```ruby
+a = [1, 2, 3]
+
+def no_mutate(array)
+  array.last
+end
+
+p "Before no_mutate method: #{a}"
+no_mutate(a)
+p "After no_mutate method: #{a}"
+```
+
+The only way to know if a function mutates the caller is to look at the documentation.
+
+## puts vs. return
 
 
