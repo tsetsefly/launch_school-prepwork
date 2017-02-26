@@ -95,7 +95,7 @@ no_mutate(a)
 p "After no_mutate method: #{a}"
 ```
 
-NOTE: the only way to know if a function mutates the caller is to look at the documentation.
+**NOTE:** the only way to know if a function mutates the caller is to look at the documentation.
 
 ## puts vs. return
 
@@ -127,7 +127,7 @@ add_three(5).times { puts 'this should print 8 times'}
 "hi there".length.to_s      # returns "8" - a String
 ```
 
-NOTE: in order to chain methods, the return value must be accepted by the next method
+**NOTE:** in order to chain methods, the return value must be accepted by the next method
 
 ```ruby
 def add_three(n)
