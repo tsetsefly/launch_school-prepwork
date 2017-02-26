@@ -5,11 +5,11 @@ def mutate(array)
 end
 
 p "Before mutate method: #{a}"
-mutate(a)
+p mutate(a)
 p "After mutate method: #{a}"
 
 a = [1, 2, 3]
 
 puts "Before mutate method: #{a}"
-mutate(a)
+puts mutate(a)
 puts "After mutate method: #{a}"
