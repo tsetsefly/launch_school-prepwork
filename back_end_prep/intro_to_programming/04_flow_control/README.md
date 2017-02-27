@@ -39,6 +39,7 @@ Comparison operators: ```(<, >, <=, >=, ==, !=)```
 Combining expressions: ```(&&, ||, !)```
 
 Order of **precedence**:
+
 1. ```<=, <, >, >=``` (comparison)
 2. ```==, !=``` (equality)
 3. ```&&``` (logical AND)
