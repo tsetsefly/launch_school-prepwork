@@ -5,7 +5,8 @@
 Conditions are formed using a combination of ```if``` statements and **comparison operators**
 
 * ```if``` statement reserved words: ```(if, else, elsif, end)```
-* Comparison operators: ```(<, >, <=, >=, ==, !=, &&, ||)```
+* Comparison operators: ```(<, >, <=, >=, ==, !=)```
+* Combining expressions: ```(&&, ||, !)```
 
 ```ruby
 puts "Put in a number: "
@@ -31,4 +32,14 @@ puts "x is NOT 3" unless x == 3
 
 ## Comparisons
 
-Comparison operators: ```(<, >, <=, >=, ==, !=, &&, ||)```
+Comparison operators: ```(<, >, <=, >=, ==, !=)```
+
+## Combining expressions
+
+Combining expressions: ```(&&, ||, !)```
+
+Order of **precedence**:
+1. ```<=, <, >, >=``` (comparison)
+2. ```==, !=``` (equality)
+3. ```&&``` (logical AND)
+4. ```||``` (logical OR)
