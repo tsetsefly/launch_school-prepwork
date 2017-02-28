@@ -78,6 +78,8 @@ else
 end
 ```
 
+Compared with the above, below removes the case argument and avoids the need to write ```puts``` as many times.
+
 ```ruby
 # case_statement.rb <-- refactored with no case argument
 
