@@ -101,7 +101,7 @@ puts answer
 
 **In Ruby, every expression evalutes to ```true``` when used in flow control except ```false``` and ```nil```.**
 
-Subtle example (evaluates to true because evaluating the assignment of ```5``` to ```x```)
+Subtle example (evaluates to ```true``` because evaluating the assignment of ```5``` to ```x```)
 ```ruby
 if x = 5
   puts "how can this be true?"
