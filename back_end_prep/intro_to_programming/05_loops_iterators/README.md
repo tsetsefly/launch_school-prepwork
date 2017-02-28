@@ -70,3 +70,103 @@ puts "Done!"
 ```
 
 ## Until loops
+
+Opposite of a ```while``` loop
+
+An example of the tools to write expressive code in Ruby.
+
+## Do / While loops
+
+Similar to a ```while`` loop except that **the code is executed once prior to the conditional check.**
+
+```ruby
+# perform_again.rb
+
+loop do
+  puts "Do you want to do that again?"
+  answer = gets.chomp
+  if answer != 'Y'
+    break
+  end
+end
+```
+
+Possible, but not recommended:
+```ruby
+begin
+  puts "Do you want to do that again?"
+  answer = gets.chomp
+end while answer == 'Y'
+```
+
+## For loops
+
+```for``` loops are used to loop over a collection of elements. Loops over a finite number of elements.
+
+```ruby
+x = gets.chomp.to_i
+
+for i in 1..x do
+  puts i
+end
+
+puts "Done!"
+```
+
+Unlike ```while``` loops the ```for``` loop returns the collection of elements after execution.
+
+```ruby
+x = [1, 2, 3, 4, 5]
+
+for i in x do
+  puts i
+end
+
+puts "Done!"
+```
+
+## Conditionals within loops
+
+With ```if``` statements:
+```ruby
+x = 0
+
+while x <= 10
+  if x.odd?
+    puts x
+  end
+  x += 1
+end
+```
+
+With ```next```:
+```ruby
+x = 0
+
+while x <= 10
+  if x == 3
+    x += 1
+    next
+  elsif x.odd?
+    puts x
+  end
+  x += 1
+end
+```
+
+With ```break```:
+```ruby
+x = 0
+
+while x <= 10
+  if x == 7
+    break
+  elsif x.odd?
+    puts x
+  end
+  x += 1
+end
+```
+
+## Iterators
+
