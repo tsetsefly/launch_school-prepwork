@@ -77,7 +77,7 @@ An example of the tools to write expressive code in Ruby.
 
 ## Do / While loops
 
-Similar to a ```while`` loop except that **the code is executed once prior to the conditional check.**
+Similar to a ```while``` loop except that **the code is executed once prior to the conditional check.**
 
 ```ruby
 # perform_again.rb
@@ -169,4 +169,74 @@ end
 ```
 
 ## Iterators
+
+Iterators allow you to naturally loop over a set of data and operate on each element in the collection.
+
+Using the ```each``` method:
+```ruby
+names = ['Bob', 'Joe', 'Steve', 'Janice', 'Susan', 'Helen']
+
+names.each { |name| puts name }
+```
+
+Another way to represent code blocks while using the ```each``` method:
+```ruby
+names = ['Bob', 'Joe', 'Steve', 'Janice', 'Susan', 'Helen']
+x = 1
+
+names.each do |name|
+  puts "#{x}. #{name}"
+  x += 1
+end
+```
+
+Generally, the preferred method to iterate over a collection of elements.
+
+## Recursion
+
+Recursion is another way to create a loop when you call a method from within itself.
+
+```ruby
+def doubler(start)
+  puts start * 2
+end
+```
+
+Output of the above is:
+```ruby
+irb(main):004:0> doubler(2)
+4
+=> nil
+irb(main):005:0> doubler(4)
+8
+=> nil
+irb(main):006:0> doubler(8)
+16
+=> nil
+```
+
+Recursion with conditionals to set the termination condition:
+```ruby
+def doubler(start)
+  puts start
+  if start < 10
+    doubler(start * 2)
+  end
+end
+```
+
+Fibonacci's sequence
+```ruby
+def fibonacci(number)
+  if number < 2
+    number
+  else
+    fibonacci(number - 1) + fibonacci(number - 2)
+  end
+end
+
+puts fibonacci(6)
+```
+
+The key concept with recursion is that there is some baseline condition that returns a value. This then "unwinds" the recursive calls. The successive recursive calls build up until some value returns and all the prior calls can be evaluated.
 
