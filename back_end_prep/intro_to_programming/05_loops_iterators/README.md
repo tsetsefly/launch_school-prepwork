@@ -225,7 +225,7 @@ def doubler(start)
 end
 ```
 
-Fibonacci's sequence
+Fibonacci's sequence:
 ```ruby
 def fibonacci(number)
   if number < 2
