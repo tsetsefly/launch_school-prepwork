@@ -115,6 +115,8 @@ irb :003 > numbers
  => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
  ## Methods with a ```!```
+
+ Generally means that the method will change (or mutate) the caller permanently
 ```
 
 
