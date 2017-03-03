@@ -102,4 +102,19 @@ irb :015 > b
 => [1, 2, 3, 4]
 ```
 
+## Iterating over arrays
+
+The ```select``` method:
+
+```ruby
+irb :001 > numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+irb :002 > numbers.select { |number| number > 4 }
+ => [5, 6, 7, 8, 9, 10]
+irb :003 > numbers
+ => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+ ## Methods with a ```!```
+```
+
 
