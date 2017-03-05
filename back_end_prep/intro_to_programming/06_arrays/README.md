@@ -230,4 +230,27 @@ irb: 002 > a.each_with_index { |val, idx| puts "#{idx+1}. #{val}" }
 => [1, 2, 3, 4, 5]
 ```
 
-### sort
+### ```sort```
+
+Returns a sorted array. It is not destructive.
+
+```ruby
+irb :001 > a = [5, 3, 8, 2, 4, 1]
+=> [5, 3, 8, 2, 4, 1]
+irb :002 > a.sort
+=> [1, 2, 3, 4, 5, 8]
+```
+
+### ```product```
+
+Creates an array of all combinations of all elements of all arrays.
+
+```ruby
+irb :001 > [1, 2, 3].product([4, 5])
+=> [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]]
+```
+
+## ```each``` vs. ```map```
+
+### ```each```
+
