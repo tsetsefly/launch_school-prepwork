@@ -131,3 +131,103 @@ It is possible to send an argument to a method and have that method and change t
 What does this output?
 
 ## Nested Arrays
+
+```ruby
+irb :001 > teams = [['Joe', 'Steve'], ['Frank', 'Molly'], ['Dan', 'Sara']]
+=> [["Joe", "Steve"], ["Frank", "Molly"], ["Dan", "Sara"]]
+irb :002 > teams[1]
+=> ["Frank", "Molly"]
+
+## Comparing Arrays
+
+```ruby
+irb :001 > a = [1, 2, 3]
+=> [1, 2, 3]
+irb :002 > b = [2, 3, 4]
+=> [2, 3, 4]
+irb :003 > a == b
+=> false
+irb :004 > b.pop
+=> 4
+irb :005 > b.unshift(1)
+=> [1, 2, 3]
+irb :006 > a == b
+=> true
+```
+
+NOTE: the ```unshift``` method is kinda the opposite of ```pop```.
+
+## ```to_s```
+
+```ruby
+irb :001 > a = [1, 2, 3]
+=> [1, 2, 3]
+irb :002 > "It's as easy as #{a}"
+=> "It's as easy as [1, 2, 3]"
+```
+
+## Common Array Methods
+
+[The array class](http://www.ruby-doc.org/core-2.1.0/Array.html)
+
+### ```include?```
+
+Checks to see if the argument given is included in the array.
+
+NOTE: ```?``` at the end of an array generally means that it will return a boolean value.
+
+```ruby
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.include?(3)
+=> true
+irb: 003 > a.include?(6)
+=> false
+```
+
+### ```flatten```
+
+Used to flatten nested arrays into a one-dimensional array.
+
+```ruby
+irb: 001 > a = [1, 2, [3, 4, 5], [6, 7]]
+=> [1, 2, [3, 4, 5], [6, 7]]
+irb: 002 > a.flatten
+=> [1, 2, 3, 4, 5, 6, 7]
+```
+
+Not destructive without a ```!```
+
+### ```each_index```
+
+Iterates through an array much like the ```each``` method except it represents the **index** instead of the **value**.
+
+```ruby
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_index { |i| puts "This is index #{i}" }
+This is index 0
+This is index 1
+This is index 2
+This is index 3
+This is index 4
+=> [1, 2, 3, 4, 5]
+```
+
+### each_with_index
+
+Lets you manipulate both index and value (passes in two parameters).
+
+```ruby
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_with_index { |val, idx| puts "#{idx+1}. #{val}" }
+1. 1
+2. 2
+3. 3
+4. 4
+5. 5
+=> [1, 2, 3, 4, 5]
+```
+
+### sort
