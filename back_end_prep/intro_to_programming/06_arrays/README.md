@@ -116,7 +116,18 @@ irb :003 > numbers
 
  ## Methods with a ```!```
 
- Generally means that the method will change (or mutate) the caller permanently
+ A bang operator (```!```) at the end of a method generally means that the method will change (or mutate) the caller permanently. Unfortunately this is not always the case.
+
+ NOTE: ```push``` and ```pop``` are destructive (mutates the caller) and don't have a ```!```.
 ```
 
+## Mutating the Caller
 
+It is possible to send an argument to a method and have that method and change that argument forever without knowing. Therefore make sure to know:
+
+1. what a method is doing to its arguments
+2. what a method returns
+
+What does this output?
+
+## Nested Arrays
