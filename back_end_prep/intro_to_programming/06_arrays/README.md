@@ -214,7 +214,7 @@ This is index 4
 => [1, 2, 3, 4, 5]
 ```
 
-### each_with_index
+### ```each_with_index```
 
 Lets you manipulate both index and value (passes in two parameters).
 
