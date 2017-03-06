@@ -58,3 +58,15 @@ irb :011 > person.merge!(new_hash)
 ```
 
 ## Iterating over hashes
+
+Using the ```each``` method:
+```ruby
+person = {name: 'bob', height: '6 ft', weight: '160 lbs', hair: 'brown'}
+
+person.each do |key, value|
+	puts "Bob's #{key} is #{value}"
+end
+```
+
+## Hashes as optional parameters
+
