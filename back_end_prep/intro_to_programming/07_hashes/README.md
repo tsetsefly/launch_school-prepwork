@@ -115,3 +115,66 @@ irb :005 > {{key: "key"} => "hash as a key"}  # hash as key
 
 ### ```has_key?```
 
+Allows you to check if a hash has a specific key, returns a boolean.
+
+```ruby
+irb :001 > name_and_age = { "Bob" => 42, "Steve" => 31, "Joe" => 19}
+=> {"Bob"=>42, "Steve"=>31, "Joe"=>19}
+irb :002 > name_and_age.has_key?("Steve")
+=> true
+irb :003 > name_and_age.has_key?("Larry")
+=> false
+```
+
+### ```select```
+
+Allows you to pass a block and return any key-value parirs that evaluate to true.
+
+```ruby
+irb :004 > name_and_age.select { |k,v| k == "Bob" }
+=> {"Bob"=>42}
+irb :005 > name_and_age.select { |k,v| (k == "Bob") || (v == 19) }
+=> {"Bob"=>42, "Joe"=>19}
+```
+
+### ```fetch```
+
+Allows you to pass a key and return the value for that key if it exists.
+
+```ruby
+irb :006 > name_and_age.fetch("Steve")
+=> 31
+irb :007 > name_and_age.fetch("Larry")
+=> KeyError: key not found: "Larry"
+     from (irb):32:in `fetch'
+     from (irb):32
+     from /usr/local/rvm/rubies/ruby-2.0.0-rc2/bin/irb:16:in `<main>'
+irb :008 > name_and_age.fetch("Larry", "Larry isn't in this hash")
+=> "Larry isn't in this hash"
+```
+
+### ```to_a```
+
+Returns an array version of your hash when called. Does not do it destructively.
+
+```ruby
+irb :009 > name_and_age.to_a
+=> [["Bob", 42], ["Steve", 31], ["Joe", 19]]
+irb :010 > name_and_age
+=> {"Bob"=>42, "Steve"=>31, "Joe"=>19}
+```
+
+### ```keys``` and ```values```
+
+Retrieve keys or values from a hash.
+
+```ruby
+irb :0011 > name_and_age.keys
+=> ["Bob", "Steve", "Joe"]
+irb :0012 > name_and_age.values
+=> [42, 31, 19]
+```
+
+## Hash order
+
+Maintains order of storage in Ruby 1.9 and greater
