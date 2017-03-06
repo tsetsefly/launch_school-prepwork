@@ -254,3 +254,54 @@ irb :001 > [1, 2, 3].product([4, 5])
 
 ### ```each```
 
+Allows for iteration over a collection. It is generally preferred to a ```for``` loop. ```each``` runs the code in the block once for each element in the collection and returns the collection it was invoked on. With no block, it returns an enumerator.
+
+```ruby
+a = [1, 2, 3]
+a.each { |e| puts e }
+
+# Outputs
+1
+2
+3
+=> [1, 2, 3]
+```
+
+```ruby
+a = [1, 2, 3]
+a.each { |e| puts e + 2 }
+
+# Outputs
+3
+4
+5
+=> [1, 2, 3]
+```
+
+```ruby
+a = [1, 2, 3]
+a.each
+=> #<Enumerator: [1, 2, 3]:each>
+```
+
+### ```map```
+
+Works similarly to ```each``` except that the return value creates a new array containing the values after the block code is run on each element.
+
+```ruby
+a = [1, 2, 3]
+a.map { |x| x**2 }
+=> [1, 4, 9]
+```
+
+```ruby
+a = [1, 2, 3]
+a.map { |x| puts x**2 }
+=> [nil, nil, nil]
+```
+
+```ruby
+a = [1, 2, 3]
+a.map
+#<Enumerator: ...>
+```
