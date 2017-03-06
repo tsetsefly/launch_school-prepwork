@@ -99,3 +99,5 @@ When you type an expression, it always returns something. In irb the return is d
 ## puts vs. return
 
 Puts is printing to the console while return shows what is returned by the expressions, functions, operations computed.
+
+
