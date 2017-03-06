@@ -87,3 +87,31 @@ greeting("Bob", age: 62, city: "New York City")
 
 ## Hashes vs. arrays
 
+* Specific label? **Hash**
+* Order matter? **Array**
+* Stack (first-in-first-out)? **Array**
+* Queue (last-in-first-out)? **Hash**
+
+## Hash keys
+
+Can use many data types as the key. However, must use ```=>``` (hash rocket) style when not using symbols as keys.
+
+```ruby
+irb :001 > {"height" => "6 ft"}     # string as key
+=> {"height"=>"6 ft"}
+irb :002 > {["height"] => "6 ft"}   # array as key
+=> {["height"]=>"6 ft"}
+irb :003 > {1 => "one"}             # integer as key
+=> {1=>"one"}
+irb :004 > {45.324 => "forty-five point something"}  # float as key
+=> {45.324=>"forty-five point something"}
+irb :005 > {{key: "key"} => "hash as a key"}  # hash as key
+=> {{:key=>"key"}=>"hash as a key"}
+```
+
+## Common hash methods
+
+[The hash class](http://ruby-doc.org/core-2.1.0/Hash.html)
+
+### ```has_key?```
+
