@@ -63,3 +63,17 @@ irb :007 >   end
 1: Here we are with a new line of textWriting to files in Ruby is simple.
  => ["another example of writing to a file.\n", "Here we are with a new line of textWriting to files in Ruby is simple."]
 ```
+
+## Deleting a file
+
+Delete files with ```File.delete```
+
+```ruby
+irb :001 > File.new("dummy_file.txt", "w+")
+ => #<File:dummy_file.txt>
+irb :002 > File.delete("dummy_file.txt")
+ => 1
+```
+
+## File classes
+
