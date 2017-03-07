@@ -113,7 +113,7 @@ irb :005 > {{key: "key"} => "hash as a key"}  # hash as key
 
 [The hash class](http://ruby-doc.org/core-2.1.0/Hash.html)
 
-### ```has_key?```
+### ```has_key?``` and ```has_value?```
 
 Allows you to check if a hash has a specific key, returns a boolean.
 
