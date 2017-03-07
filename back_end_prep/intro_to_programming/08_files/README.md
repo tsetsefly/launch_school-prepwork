@@ -77,3 +77,92 @@ irb :002 > File.delete("dummy_file.txt")
 
 ## File classes
 
+File handling comes down to:
+
+* The **right stuff* being...
+* in the **right kind of files**...
+* in the **right place.
+
+### The right stuff
+
+Important concepts are creating, opening, deleting files.
+
+### The right kind of files
+
+Comes down to **file formats** and **extensions**.
+
+### The right place
+
+Comes down to a recognizable **directory structure** or **Path**
+
+### ```IO``` and ```File``` related classes
+
+The ```File```'s superclass is ```IO```
+
+```ruby
+irb :001 > File.superclass
+=> IO
+irb :002 > $stdout
+ => #<IO:<STDOUT>>
+irb :003 > $stderr
+ => #<IO:<STDERR>>
+irb :004 > $stdin
+ => #<IO:<STDIN>>
+```
+
+The major ```IO``` streams: ```STDOUT```, ```STDIN```, ```STDERR```.
+
+When we talk about files, we refer to them in the context of their place in the file structure.
+
+* ```Dir```: class shares some of File's methods. However, it is not an IO stream.
+* ```Pathname```: class exposes all of the methods for Dir and ```File```
+
+Finding the extension name via the ```File::extname``` method:
+```ruby
+irb :001 > require 'pathname'
+ => true
+irb :002 > f = File.new("simple_file.txt", "r")
+ => #<File:simple_file.txt>
+irb :003 > pn = Pathname.new(f)
+ => #<Pathname:simple_file.txt>
+irb :004> pn.extname
+ => ".txt"
+irb :005 > File.extname("simple_file.txt")
+ => ".txt"
+```
+
+## Exercise 2
+
+```ruby
+irb :001 > d = Dir.new(".")
+ => #<Dir:.>
+irb :02 > while file = d.read do
+irb :03 >     puts "#{file} has extension .txt" if File.extname(file) == ".txt"
+irb :04?>   end
+simple_file.txt has extension .txt
+original_file.txt has extension .txt
+ => nil
+```
+
+```ruby
+irb :001 > require 'pathname'
+ => true
+irb :002 > pn = Pathname.new(".")
+irb :003 > pn.entries.each { |f| puts "#{f} has extension .txt" if f.extname == ".txt" }
+simple_file.txt has extension .txt
+original_file.txt has extension .txt
+ => [#<Pathname:simple_file.txt>, #<Pathname:cultures.json>, #<Pathname:ruby_book>, #<Pathname:articles.xml>, #<Pathname:chair.rb>, #<Pathname:.git>, #<Pathname:original_file.txt>, #<Pathname:feedzilla.json>, #<Pathname:slashdot>, #<Pathname:articles.json>, #<Pathname:..>, #<Pathname:.>]
+```
+
+## Working with file formats - CSV, Excel, JSON, XML
+
+### CSV and XLS / XLSX
+
+"Data that fits in a box."
+
+### JSON and XML / HTML
+
+* JSON: allows you describe nested characteristics of plain-text data.
+* XML: allows you to define domain specific schematics.
+
+## Exercise 3
