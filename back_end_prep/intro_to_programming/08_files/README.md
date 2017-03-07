@@ -1,4 +1,65 @@
 # [Files](https://launchschool.com/books/ruby/read/files)
 
-## Intro
+## Creating a file
 
+```ruby
+irb :001 > my_file = File.new("simple_file.txt", "w+")
+=> #<File:simple_file.txt>
+irb :002 > my_file.close
+```
+
+You always want to close files to reduce unneeded memory usage. Ruby will automatically close a file if its ```open``` method is within a block.
+
+## Opening files
+
+Use ```File.open``` to open an existing file.
+
+* ```r```: read-only (starts at the beginning of the file)
+* ```w```: write-only (if the file exists, **overwrites** everything in the file)
+* ```w+```: read and write: (if the file exists, **overwrites** everything in the file)
+* ```a+```: read-write (if the file exists, starts at the end of file. Otherwise creates a new file... good for updating files)
+
+### Opening file for reading
+
+* ```File.read("file_name"): reads out entire content of the file.
+* ```File.readlines("file_name"): reads the entire file based on individual lines and returns those lines in an array.
+
+### Opening file for writing
+
+```ruby
+irb :001 >  sample = File.open("simple_file.txt",  "w+")
+ => #<File:simple_file.txt>
+irb :002 > sample.puts("another example of writing to a file.")
+ => nil
+irb :003 > sample.close
+ => nil
+irb :004 > File.read("simple_file.txt")
+ => "another example of writing to a file.\n"
+```
+
+```ruby
+irb :005 > File.open("simple_file.txt", "a+") do |file|
+irb :006 >     file << "Here we are with a new line of text"
+irb :007 > end
+ => #<File:simple_file.txt (closed)>
+irb :008 > File.readlines("simple_file.txt").each do |line|
+irb :009 >     puts line
+irb :010 > end
+another example of writing to a file.
+Here we are with a new line of text
+ => ["another example of writing to a file.\n", "Here we are with a new line of text"]
+```
+
+```ruby
+irb :001 > File.open("simple_file.txt",  "a+") do |file|
+irb :002 >       file.write "Writing to files in Ruby is simple."
+irb :003 >   end
+ => 35
+irb :004 >
+irb :005 >   File.readlines("simple_file.txt").each_with_index do |line, line_num|
+irb :006 >       puts "#{line_num}: #{line}"
+irb :007 >   end
+0: another example of writing to a file.
+1: Here we are with a new line of textWriting to files in Ruby is simple.
+ => ["another example of writing to a file.\n", "Here we are with a new line of textWriting to files in Ruby is simple."]
+```
