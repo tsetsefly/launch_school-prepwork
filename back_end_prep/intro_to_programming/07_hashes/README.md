@@ -177,4 +177,4 @@ irb :0012 > name_and_age.values
 
 ## Hash order
 
-Maintains order of storage in Ruby 1.9 and greater
+Maintains order of storage in Ruby 1.9 and greater.
