@@ -21,8 +21,8 @@ Use ```File.open``` to open an existing file.
 
 ### Opening file for reading
 
-* ```File.read("file_name"): reads out entire content of the file.
-* ```File.readlines("file_name"): reads the entire file based on individual lines and returns those lines in an array.
+* ```File.read("file_name")```: reads out entire content of the file.
+* ```File.readlines("file_name")```: reads the entire file based on individual lines and returns those lines in an array.
 
 ### Opening file for writing
 

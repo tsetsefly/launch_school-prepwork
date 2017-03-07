@@ -1,4 +1,4 @@
-# Variables
+# [Variables](https://launchschool.com/books/ruby/read/variables)
 
 ## Getting Data from a User
 ```ruby
