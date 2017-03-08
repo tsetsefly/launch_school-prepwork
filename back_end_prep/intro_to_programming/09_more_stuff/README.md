@@ -70,8 +70,27 @@ has_a_b?("basketball")
 has_a_b?("football")
 has_a_b?("hockey")
 has_a_b?("golf")
+```
 
 ## Ruby Standard Classes
 
+Don't re-write stuff that's already there.
 
+Examples:
+
+* ```Math``` module
+** ```Math::sqrt``` class method
+** ```Math::PI```
+* ```Time```
+
+```ruby
+irb :003 > t = Time.new(2008, 7, 4)
+=> 2008-07-04 00:00:00 -0400
+irb :004 > t.monday?
+=> false
+irb :005 > t.friday?
+=> true
 ```
+
+## Variables as pointers
+
