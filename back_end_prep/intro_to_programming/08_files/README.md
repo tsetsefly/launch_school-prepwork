@@ -79,9 +79,9 @@ irb :002 > File.delete("dummy_file.txt")
 
 File handling comes down to:
 
-* The **right stuff* being...
+* The **right stuff** being...
 * in the **right kind of files**...
-* in the **right place.
+* in the **right place**.
 
 ### The right stuff
 
@@ -166,3 +166,13 @@ original_file.txt has extension .txt
 * XML: allows you to define domain specific schematics.
 
 ## Exercise 3
+
+```
+wget -O feedzilla.json https://d186loudes4jlv.cloudfront.net/ruby/feedzilla.json
+wget -O slashdot.xml https://d186loudes4jlv.cloudfront.net/ruby/slashdot.xml
+```
+
+```
+gem install axlsx
+gem install nokogiri
+```
