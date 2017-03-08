@@ -79,8 +79,8 @@ Don't re-write stuff that's already there.
 Examples:
 
 * ```Math``` module
-** ```Math::sqrt``` class method
-** ```Math::PI```
+ * ```Math::sqrt``` class method
+ * ```Math::PI```
 * ```Time```
 
 ```ruby
