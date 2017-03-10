@@ -94,3 +94,20 @@ irb :005 > t.friday?
 
 ## Variables as pointers
 
+What is the difference between...
+
+```ruby
+a = "hi there"
+b = a
+a = "not here"
+```
+
+and...
+
+```ruby
+a = "hi there"
+b = a
+a << ", Bob"
+```
+
+
