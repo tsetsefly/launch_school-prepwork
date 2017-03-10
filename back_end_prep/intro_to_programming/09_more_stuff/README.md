@@ -224,7 +224,7 @@ zero.each { |element| puts element } rescue puts "Can't do that!"
 puts "After each call"
 ```
 
-Triggers ```rescue``` block because you can't call ```.each``` on an integer value (the value of the ```zero``` variable). If we didn't have the ```rescue``` block the second ```puts``` (```puts "After each call") would not execute.
+Triggers ```rescue``` block because you can't call ```.each``` on an integer value (the value of the ```zero``` variable). If we didn't have the ```rescue``` block the second ```puts``` (```puts "After each call"```) would not execute.
 
 You can also ```rescue``` pre-existing errors:
 ```ruby
