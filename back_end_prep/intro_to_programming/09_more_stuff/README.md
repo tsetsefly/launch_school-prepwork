@@ -145,7 +145,7 @@ take_block(number) do |num|
 end
 ```
 
-Here you pass the ```number`` into ```take_block``` method and use it in our ```block.call```.
+Here you pass the ```number``` into ```take_block``` method and use it in our ```block.call```.
 
 ### Procs
 
