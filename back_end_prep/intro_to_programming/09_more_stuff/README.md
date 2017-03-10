@@ -110,4 +110,10 @@ b = a
 a << ", Bob"
 ```
 
+The ```=``` operator reassigns a variable to a new **memory address**.
+
+The ```<<``` **mutates the caller** (or the memory address / space) by modified the existing string.
+
+## Blocks and Procs
+
 
