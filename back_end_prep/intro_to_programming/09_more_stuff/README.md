@@ -185,3 +185,62 @@ Gives flexibility to reuse blocks in more than one place without repeating code.
 
 ## Exception Handling
 
+Dealing with errors in a predictable way.
+
+Ruby has an ```Exception``` class that makes handling errors easier. It has reserved words:
+
+* ```begin```: designates the operation or code that is being handled
+* ```rescue```: if the operation fails have an action (like logging the error)
+
+Pattern:
+```ruby
+begin
+  # perform some dangerous operation
+rescue
+  # do this if operation fails
+  # for example, log the error
+end
+```
+
+```ruby
+names = ['bob', 'joe', 'steve', nil, 'frank']
+
+names.each do |name|
+  begin
+    puts "#{name}'s name has #{name.length} letters in it."
+  rescue
+    puts "Something went wrong!"
+  end
+end
+```
+
+Calling ```.length``` on ```nil``` will result in an error. The ```rescue``` block will allow the function to continue operating.
+
+Can also use ```rescue``` inline:
+```ruby
+zero = 0
+puts "Before each call"
+zero.each { |element| puts element } rescue puts "Can't do that!"
+puts "After each call"
+```
+
+Triggers ```rescue``` block because you can't call ```.each``` on an integer value (the value of the ```zero``` variable). If we didn't have the ```rescue``` block the second ```puts``` (```puts "After each call") would not execute.
+
+You can also ```rescue``` pre-existing errors:
+```ruby
+def divide(number, divisor)
+  begin
+    answer = number / divisor
+  rescue ZeroDivisionError => e
+    puts e.message
+  end
+end
+
+puts divide(16, 4)
+puts divide(4, 0)
+puts divide(14, 7)
+```
+
+Saving the ```ZeroDivisionError``` to the ```e``` variable and printing it to avoid discontinuation of program.
+
+## Exceptions and Stack Traces
