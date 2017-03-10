@@ -116,4 +116,72 @@ The ```<<``` **mutates the caller** (or the memory address / space) by modified 
 
 ## Blocks and Procs
 
+### Blocks
+
+Blocks can be passed into methods like normal variables.
+
+```ruby
+def take_block(&block)
+  block.call
+end
+
+take_block do
+  puts "Block being called in the method!"
+end
+```
+
+The ```&``` in the method definition tells us that the argument is a block. Needs to be the last parameter in the method definition.
+
+You call the method the same way (```take_block```). We pass in a block of code using ```do/end```.
+
+```ruby
+def take_block(number, &block)
+  block.call(number)
+end
+
+number = 42   
+take_block(number) do |num|
+  puts "Block being called in the method! #{num}"
+end
+```
+
+Here you pass the ```number`` into ```take_block``` method and use it in our ```block.call```.
+
+### Procs
+
+Procs are blocks that are wrapped in a proc object and stored in a variable to be passed around.
+
+```ruby
+talk = Proc.new do
+  puts "I am talking."
+end
+
+talk.call
+```
+
+```ruby
+talk = Proc.new do |name|
+  puts "I am talking to #{name}"
+end
+
+talk.call "Bob"
+```
+
+```ruby
+def take_proc(proc)
+  [1, 2, 3, 4, 5].each do |number|
+    proc.call number
+  end
+end
+
+proc = Proc.new do |number|
+  puts "#{number}. Proc being called in the method!"
+end
+
+take_proc(proc)
+```
+
+Gives flexibility to reuse blocks in more than one place without repeating code.
+
+## Exception Handling
 
