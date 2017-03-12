@@ -244,3 +244,5 @@ puts divide(14, 7)
 Saving the ```ZeroDivisionError``` to the ```e``` variable and printing it to avoid discontinuation of program.
 
 ## Exceptions and Stack Traces
+
+Exeception means **error** for this section.
