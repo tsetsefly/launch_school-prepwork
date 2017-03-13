@@ -288,7 +288,7 @@ greeting.rb:2:in `+': no implicit conversion of Fixnum into String (TypeError) f
 from greeting.rb:6:in `<main>'
 ```
 
-Program execution steps for above error
+Program execution steps for above error:
 ```ruby
 main -> greet -> puts -> exit and return to main
 ```
