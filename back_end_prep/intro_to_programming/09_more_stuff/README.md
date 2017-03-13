@@ -245,4 +245,75 @@ Saving the ```ZeroDivisionError``` to the ```e``` variable and printing it to av
 
 ## Exceptions and Stack Traces
 
-Exeception means **error** for this section.
+Exeception means **error** for this section. When something goes wrong, "an exception was raised."
+
+```ruby
+irb :001 > '1' + 1
+TypeError: no implicit conversion of Fixnum into String
+```
+
+Types of errors
+```ruby
+StandardError
+TypeError
+ArgumentError
+NoMethodError
+RuntimeError
+SystemCallError
+ZeroDivisionError
+RegexpError
+IOError
+EOFError
+ThreadError
+ScriptError
+SyntaxError
+LoadError
+NotImplementedError
+SecurityError
+```
+
+```ruby
+def greet(person)
+  puts "Hello, " + person
+end
+
+greet("John")
+greet(1)
+```
+
+```ruby
+$ ruby greeting.rb
+Hello, John
+greeting.rb:2:in `+': no implicit conversion of Fixnum into String (TypeError) from greeting.rb:2:in `greet'
+from greeting.rb:6:in `<main>'
+```
+
+Program execution steps for above error
+```ruby
+main -> greet -> puts -> exit and return to main
+```
+
+```ruby
+def space_out_letters(person)
+  return person.split("").join(" ")
+end
+
+def greet(person)
+  return "H e l l o, " + space_out_letters(person)
+end
+
+def decorate_greeting(person)
+  puts "" + greet(person) + ""
+end
+
+decorate_greeting("John")
+decorate_greeting(1)
+```
+
+```ruby
+H e l l o, J o h n
+greeting.rb:2:in `space_out_letters': undefined method `split' for 1:Fixnum (NoMethodError)
+from greeting.rb:6:in `greet' from greeting.rb:10:in `decorate_greeting'
+from greeting.rb:14:in `<main>'
+```
+
