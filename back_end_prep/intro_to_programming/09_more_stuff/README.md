@@ -185,7 +185,7 @@ Gives flexibility to reuse blocks in more than one place without repeating code.
 
 ## Exception Handling
 
-Dealing with errors in a predictable way.
+Dealing with errors in a predictable way. Exception handling is a structure used to handle the possibility of an error occurring in a program. It is a way of handling the error by changing the flow of control without exiting the program entirely.
 
 Ruby has an ```Exception``` class that makes handling errors easier. It has reserved words:
 
