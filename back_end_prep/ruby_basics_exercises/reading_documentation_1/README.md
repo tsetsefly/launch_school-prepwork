@@ -1,3 +1,5 @@
+# [Reading Documentation 1](https://launchschool.com/exercise_sets/4c75f0c5)
+
 ## Question 1
 
 Q: Where can you find the most complete Ruby documentation?
@@ -38,3 +40,24 @@ Another way of figuring out that ```break``` returns ```nil``` when not given an
 
 ## Question 5
 
+Q: Using the ruby documentation, determine how you can write large numbers in a way that makes them easier to read.
+
+A: Use the ```number_to_human``` [method](http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_human)
+
+Also...
+
+Using **literals**.
+
+You can write large numbers by using underscores to separate groups of digits, like so:
+
+```1_987_654_321```
+
+Finding this information can be a bit difficult, especially if you don't know the right terms; most values you use in ruby have some sort of "literal" syntax: numbers can be entered as ```123```, while Strings are entered using quotes, e.g., "quotes". The key word here is **literal**. Since it is also a syntax item, we might start our search on the syntax page in the core API documentation.
+
+If you go to this page, though, you won't find a great deal of information - just a table of different syntax items, and a whole bunch of links down the left side. The very first item in the table (as of this writing) is **Literals**, which sounds promising. But, there doesn't appear to be a way to learn more.
+
+Actually, there is - look under Files on the left side of the page. There you will find a link to a file named ```literals.rdoc```. Click this to view a page that discusses all of ruby's different literals (and there are quite a few).
+
+Once on the ```literals.rdoc``` page, you will find a brief blurb about using underscores for readability in numeric literals.
+
+## Question 6
