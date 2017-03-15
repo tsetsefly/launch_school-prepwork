@@ -61,3 +61,23 @@ Actually, there is - look under Files on the left side of the page. There you wi
 Once on the ```literals.rdoc``` page, you will find a brief blurb about using underscores for readability in numeric literals.
 
 ## Question 6
+
+Q: Using the ruby documentation, determine how you would write a Symbol that represents your name. We aren't looking for a String; we want a Symbol, which is one of ruby's datatypes.
+
+A: [Ruby cocumentation on symbols](http://ruby-doc.org/core-2.4.0/Symbol.html). Can also look at the documentation for symbol literals is on the ```literals.rdoc``` [page](https://ruby-doc.org/core-2.4.0/doc/syntax/literals_rdoc.html).
+
+## Question 7
+
+Q: Consider the following method and a call to that method:
+
+```ruby
+def my_method(a, b = 2, c = 3, d)
+  p [a, b, c, d]
+end
+
+my_method(4, 5, 6)
+```
+
+Use the ruby documentation to determine what this code will print.
+
+A:
