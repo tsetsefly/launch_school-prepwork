@@ -92,3 +92,50 @@ In this exercise, ```4```, ```5``` and ```6``` are assigned to the positional ar
 
 ## Question 8
 
+Q: Lets move on now to the documentation you will use most often; the core API section on Classes and Modules. All of these are listed under **Classes** on the Core API page.
+
+Locate and open the class documentation for the ```String``` class.
+
+A: ```String``` [documentation](http://ruby-doc.org/core-2.4.0/String.html)
+
+To get to this page, go to the Core API page of ruby-docs.org, and locate the Classes section. You can apply a filter to this list by just typing into the text box next to the header: if you type "str", for example, the list collapses into just a handful of classes/methods, of which one is our desired ```String``` class. Clicking on String opens the ```String``` class documentation.
+
+In later exercises, we will see the important parts of this page. For now, the main part of each page contains descriptions for all methods associated with the class or module you are viewing. They are also listed on the left under the **Methods** header.
+
+There are two main types of methods:
+
+1. **instance methods** (```#```), which you will use most often, and...
+2. **class methods** (```::```), which will become more important later.
+
+For now, you are mostly interested in the instance methods.
+
+On the left-hand side, instance methods are identified with a ```#```, e.g., ```#size```, while class methods and module methods are identified with a ```::```, e.g., ```::new```. This is merely a documentation convention; the ```#``` and ```::``` are not part of the method names, nor are they used to refer to methods in your programs.
+
+You will often see the # and :: notation in ruby documentation, not just on the ruby-doc.org website. In particular, we use it here at Launch School. You will also see this notation prefixed by a class or module name; for instance, you may see String#size or Array#size, Range::new or Hash::new. This notation simply means that the named method is a member of the specified class or module.
+
+## Question 9
+
+Q: Use the ruby documentation for the ```String``` class to determine which method can be used to right justify a ```String``` object.
+
+A: ```rjust``` [method](http://ruby-doc.org/core-2.4.0/String.html#method-i-rjust)
+
+## Question 10
+
+Q: Locate the ruby documentation for methods ```File::path``` and ```File#path```. How are they different?
+
+A: One is a class method and the other is an instance method. Class methods are called on the class, while instance methods are called on objects.
+
+```File::path``` [class method](http://ruby-doc.org/core-2.4.0/File.html#method-c-path)
+
+```ruby
+# calls the class method File::path since we're calling it on the 'File' class
+puts File.path('bin')
+```
+
+```File#path``` [instance method](http://ruby-doc.org/core-2.4.0/File.html#method-i-path)
+
+```ruby
+# calls the instance method File#path since we're calling it on an object of the 'File' class, namely 'f'
+f = File.new('my-file.txt')
+puts f.path
+```
