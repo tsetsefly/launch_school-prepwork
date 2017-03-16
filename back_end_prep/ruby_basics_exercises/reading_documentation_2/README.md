@@ -29,6 +29,19 @@ The part to the left of the → shows that ```insert``` takes a required index a
 > You will also see 0 or more arguments written as ```*obj``` or as ```[obj]*```. In fact, both of these are probably more common than 
 > the ```...``` adornment.
 
+Finally, we must ask if we need do anything with the return value. Going back to the signature, we see that the return value is given as ```ary```, not ```new_ary```; this usually means that the return value is the object to which the method was applied; ```a``` in this case. Since ```#insert``` modifies something, it must have modified ```a```, so it really doesn't matter if we use the return value, or just continue to use a directly; do whichever is most natural for the situation.
+
+To prove this:
+
+```ruby
+puts a.insert(3, 5, 6, 7).inspect # => ["a", "b", "c", 5, 6, 7, "d", "e"]
+puts a.inspect                    # => ["a", "b", "c", 5, 6, 7, "d", "e"]
+
+b = a.insert(3, 5, 6, 7)
+puts a.object_id            # => 70127114718140
+puts b.object_id            # => 70127114718140
+```
+
 ## Question 3
 
 Q:  
