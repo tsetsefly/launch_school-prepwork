@@ -111,7 +111,7 @@ For now, you are mostly interested in the instance methods.
 
 On the left-hand side, instance methods are identified with a ```#```, e.g., ```#size```, while class methods and module methods are identified with a ```::```, e.g., ```::new```. This is merely a documentation convention; the ```#``` and ```::``` are not part of the method names, nor are they used to refer to methods in your programs.
 
-You will often see the # and :: notation in ruby documentation, not just on the ruby-doc.org website. In particular, we use it here at Launch School. You will also see this notation prefixed by a class or module name; for instance, you may see String#size or Array#size, Range::new or Hash::new. This notation simply means that the named method is a member of the specified class or module.
+You will often see the ```#``` and ```::``` notation in ruby documentation, not just on the ruby-doc.org website. In particular, we use it here at Launch School. You will also see this notation prefixed by a class or module name; for instance, you may see ```String#size``` or ```Array#size```, ```Range::new``` or ```Hash::new```. This notation simply means that the named method is a member of the specified class or module.
 
 ## Question 9
 
