@@ -44,6 +44,15 @@ puts b.object_id            # => 70127114718140
 
 ## Question 3
 
-Q:  
+Q: Assume you have the following code:
 
-A:
+```ruby
+s = 'abc def ghi,jkl mno pqr,stu vwx yz'
+puts s.split.inspect
+puts s.split(',').inspect
+puts s.split(',', 2).inspect
+```
+
+What will each of the 3 ```puts``` statements print?
+
+A: 
