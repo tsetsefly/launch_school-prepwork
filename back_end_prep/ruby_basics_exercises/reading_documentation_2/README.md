@@ -55,10 +55,29 @@ puts s.split(',', 2).inspect
 
 What will each of the 3 ```puts``` statements print?
 
-A: all return ```nil``` but print:
+A: all *return* ```nil``` but *print*:
 
 * ```["abc", "def", "ghi,jkl", "mno", "pqr,stu", "vwx", "yz"]```
 * ```["abc def ghi", "jkl mno pqr", "stu vwx yz"]```
 * ```["abc def ghi", "jkl mno pqr,stu vwx yz"]```
 
 [Documentaiton for ```split```](http://ruby-doc.org/core-2.4.0/String.html#method-i-split)
+
+```split(pattern=nil, [limit]) → anArray```
+
+## Question 4
+
+Q: Assume you have the following code:
+
+```ruby
+require 'date'
+
+puts Date.new
+puts Date.new(2016)
+puts Date.new(2016, 5)
+puts Date.new(2016, 5, 13)
+```
+
+What will each of the 4 ```puts``` statements print?
+
+A: 
