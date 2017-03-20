@@ -2,13 +2,13 @@
 
 ## Question 1
 
-Q: How would you use ```String#upcase``` to create an uppercase version of the string ```"xyz"```?
+**Q:** How would you use ```String#upcase``` to create an uppercase version of the string ```"xyz"```?
 
-A: ```xyz = "xyz".upcase```
+**A:** ```xyz = "xyz".upcase```
 
 ## Question 2
 
-Q: Assume you have this Array:
+**Q:** Assume you have this Array:
 
 ```ruby
 a = %w(a b c d e)
@@ -16,7 +16,7 @@ a = %w(a b c d e)
 
 How would you use ```Array#insert``` to insert the numbers ```5```, ```6```, and ```7``` between the elements with values ```'c'``` and ```'d'```?
 
-A: ```a.insert(3, 5, 6, 7)```
+**A:** ```a.insert(3, 5, 6, 7)```
 
 The documentation for ````Array#insert``` shows that its signature as:
 
@@ -44,7 +44,7 @@ puts b.object_id            # => 70127114718140
 
 ## Question 3
 
-Q: Assume you have the following code:
+**Q:** Assume you have the following code:
 
 ```ruby
 s = 'abc def ghi,jkl mno pqr,stu vwx yz'
@@ -55,7 +55,7 @@ puts s.split(',', 2).inspect
 
 What will each of the 3 ```puts``` statements print?
 
-A: all *return* ```nil``` but *print*:
+**A:** all *return* ```nil``` but *print*:
 
 * ```["abc", "def", "ghi,jkl", "mno", "pqr,stu", "vwx", "yz"]```
 * ```["abc def ghi", "jkl mno pqr", "stu vwx yz"]```
@@ -67,7 +67,7 @@ A: all *return* ```nil``` but *print*:
 
 ## Question 4
 
-Q: Assume you have the following code:
+**Q:** Assume you have the following code:
 
 ```ruby
 require 'date'
@@ -80,4 +80,30 @@ puts Date.new(2016, 5, 13)
 
 What will each of the 4 ```puts``` statements print?
 
-A: 
+**A:** [Date documentation](https://ruby-doc.org/stdlib-2.3.1/libdoc/date/rdoc/Date.html)
+
+```ruby
+# puts Date.new
+-4712-01-01
+
+# puts Date.new(2016)
+2016-01-01
+
+# puts Date.new(2016, 5)
+2016-05-01
+
+# puts Date.new(2016, 5, 13)
+2016-05-13
+```
+
+## Question 5
+
+**Q:** The ```Array#bsearch``` method is used to search ordered ```Array```s more quickly than ```#find``` and ```#select``` can. Assume you have the following code:
+
+```ruby
+a = [1, 4, 8, 11, 15, 19]
+```
+
+How would you search this ```Array``` to find the first element whose value exceeds ```8```?
+
+**A:** 
