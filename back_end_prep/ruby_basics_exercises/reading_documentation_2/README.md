@@ -55,4 +55,10 @@ puts s.split(',', 2).inspect
 
 What will each of the 3 ```puts``` statements print?
 
-A: 
+A: all return ```nil``` but print:
+
+* ```["abc", "def", "ghi,jkl", "mno", "pqr,stu", "vwx", "yz"]```
+* ```["abc def ghi", "jkl mno pqr", "stu vwx yz"]```
+* ```["abc def ghi", "jkl mno pqr,stu vwx yz"]```
+
+[Documentaiton for ```split```](http://ruby-doc.org/core-2.4.0/String.html#method-i-split)
