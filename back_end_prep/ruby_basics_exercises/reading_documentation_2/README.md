@@ -18,7 +18,7 @@ How would you use ```Array#insert``` to insert the numbers ```5```, ```6```, and
 
 **A:** ```a.insert(3, 5, 6, 7)```
 
-The documentation for ````Array#insert``` shows that its signature as:
+The documentation for ```Array#insert``` shows that its signature as:
 
 * insert(index, obj...) → ary
 
@@ -109,4 +109,32 @@ How would you search this ```Array``` to find the first element whose value exce
 **A:** [```bsearch``` documentation](https://ruby-doc.org/core-2.2.0/Array.html#method-i-bsearch)
 
 ```a.bsearch {|x| x > 8 } #=> 11```
+
+## Question 6
+
+**Q:** What do each of these ```puts``` statements output?
+
+```ruby
+a = %w(a b c d e)
+puts a.fetch(7)
+puts a.fetch(7, 'beats me')
+puts a.fetch(7) { |index| index**2 }
+```
+
+**A:** [```fetch``` documentation](https://ruby-doc.org/core-2.2.0/Array.html#method-i-fetch)
+
+```ruby
+puts a.fetch(7) #=> IndexError: index 7 outside of array bounds: -5...5
+puts a.fetch(7, 'beats me') #=> "beats me"
+puts a.fetch(7) { |index| index**2 } #=> 49
+```
+
+The documentation for Array#fetch has the signature:
+* fetch(index) → obj
+* fetch(index, default) → obj
+* fetch(index) { |index| block } → obj
+
+With this basic overview, we can tell that the first ```puts``` should print an error message; the second form returns the value of the ```default``` argument if the element doesn't exist; the third form returns the value returned by the block. So, the first ```puts``` raises an ```IndexError```, the second prints beats me, while the third prints ```49```.
+
+## Question 7
 
