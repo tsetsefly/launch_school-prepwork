@@ -106,4 +106,7 @@ a = [1, 4, 8, 11, 15, 19]
 
 How would you search this ```Array``` to find the first element whose value exceeds ```8```?
 
-**A:** 
+**A:** [```bsearch``` documentation](https://ruby-doc.org/core-2.2.0/Array.html#method-i-bsearch)
+
+```a.bsearch {|x| x > 8 } #=> 11```
+
