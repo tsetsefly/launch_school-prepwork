@@ -209,5 +209,24 @@ Thus, our solution to the exercise is to modify the second line of code to inclu
 
 [Launch School Solution](https://launchschool.com/exercises/bdff9488)
 
-## Question 9
+## Question 9: Included Modules
 
+**Q:** Use irb to run the following code:
+
+```ruby
+a = [5, 9, 3, 11]
+puts a.min
+```
+
+Find the documentation for the ```#min``` method and modify the above program to print the two smallest values in the ```Array```.
+
+**A:** [```Array``` ```min``` method documentation](https://ruby-doc.org/core-2.4.0/Array.html#method-i-min)
+
+```ruby
+a = [5, 9, 3, 11]
+puts a.min(2)
+```
+
+Ruby version 2.4.0 introduced an ```Array#min``` method not available in prior versions of Ruby; we wrote this exercise prior to that release. 
+
+[Launch School Solution](https://launchschool.com/exercises/6e0bc760)
