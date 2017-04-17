@@ -1,12 +1,12 @@
 # [Reading Documentation 2](https://launchschool.com/exercises/0f953b73)
 
-## Question 1
+## Question 1: Methods Without Arguments
 
 **Q:** How would you use ```String#upcase``` to create an uppercase version of the string ```"xyz"```?
 
 **A:** ```xyz = "xyz".upcase```
 
-## Question 2
+## Question 2: Required Arguments
 
 **Q:** Assume you have this Array:
 
@@ -42,7 +42,7 @@ puts a.object_id            # => 70127114718140
 puts b.object_id            # => 70127114718140
 ```
 
-## Question 3
+## Question 3: Optional Arguments
 
 **Q:** Assume you have the following code:
 
@@ -65,7 +65,7 @@ What will each of the 3 ```puts``` statements print?
 
 ```split(pattern=nil, [limit]) → anArray```
 
-## Question 4
+## Question 4: Optional Arguments Redux
 
 **Q:** Assume you have the following code:
 
@@ -96,7 +96,7 @@ What will each of the 4 ```puts``` statements print?
 2016-05-13
 ```
 
-## Question 5
+## Question 5: Mandatory Blocks
 
 **Q:** The ```Array#bsearch``` method is used to search ordered ```Array```s more quickly than ```#find``` and ```#select``` can. Assume you have the following code:
 
@@ -110,7 +110,7 @@ How would you search this ```Array``` to find the first element whose value exce
 
 ```a.bsearch {|x| x > 8 } #=> 11```
 
-## Question 6
+## Question 6: Multiple Signatures
 
 **Q:** What do each of these ```puts``` statements output?
 
@@ -136,7 +136,7 @@ The documentation for Array#fetch has the signature:
 
 With this basic overview, we can tell that the first ```puts``` should print an error message; the second form returns the value of the ```default``` argument if the element doesn't exist; the third form returns the value returned by the block. So, the first ```puts``` raises an ```IndexError```, the second prints beats me, while the third prints ```49```.
 
-## Question 7
+## Question 7: Keyword Arguments
 
 **Q:** What does this code print?
 
@@ -173,7 +173,7 @@ Given all of this information, we can see that the code will print ```5``` on it
 
 [Launch School Solution](https://launchschool.com/exercises/1206264a)
 
-## Question 8
+## Question 8: Parent Class
 
 **Q:** Use irb to run the following code:
 
