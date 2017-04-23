@@ -117,40 +117,119 @@ my_value(a)
 puts a
 ```
 
-**Q:**
+**A:**
+
+If you said this would issue an error message or raise an exception, you are correct. The error is:
+
+```
+`my_value': undefined local variable or method `a' for main:Object (NameError)
+```
+
+Even though a is defined before my_value is defined, it is not visible inside my_value. Methods are self contained with respect to local variables; local variables defined inside the method are not visible outside the method, and local variables defined outside the method are not visible inside the method.
+
+Note, however, that local variables will be visible (via closures) inside blocks, procs, and lambdas.
+
+## Question 7: What's my Value? - 7
+
+**Q:** What will the following code print, and why? Don't run the code until you have tried to answer.
+
+```ruby
+a = 7
+array = [1, 2, 3]
+
+array.each do |element|
+  a = element
+end
+
+puts a
+```
 
 **A:**
 
-## Question 7
+```
+3
+```
 
-**Q:**
+We are now dealing with blocks; the rules for blocks differ from the rules for methods. In methods, local variables are self-contained. Not so in blocks; blocks can use and modify local variables that are defined outside the block.
 
-**A:**
+In this case, a starts out as 7, then we set a to 1, 2 and 3 in sequence. By the time we get to the puts, a has a value of 3.
 
+## Question 8: What's my Value? - 8
 
-## Question 8
+**Q:** What will the following code print, and why? Don't run the code until you have tried to answer.
 
-**Q:**
+```ruby
+array = [1, 2, 3]
 
-**A:**
+array.each do |element|
+  a = element
+end
 
-## Question 9
-
-**Q:**
-
-**A:**
-
-
-## Question 10
-
-**Q:**
+puts a
+```
 
 **A:**
 
+If you said this would issue an error message or raise an exception, you are correct. The error is:
 
+```
+undefined local variable or method `a' for main:Object (NameError)
+```
 
+Compared to the previous exercise, all we have done is remove the assignment of the a at the top level to after the block, and that has a completely different result. We now get an exception when the puts is executed because a is not defined. It is undefined because a in the block is local to the block; it is local to the block because a was not previously defined prior to the block.
 
+## Question 9: What's my Value? - 9
 
+**Q:** What will the following code print, and why? Don't run the code until you have tried to answer.
+
+```ruby
+a = 7
+array = [1, 2, 3]
+
+array.each do |a|
+  a += 1
+end
+
+puts a
+```
+
+**A:**
+
+```7```
+
+This problem demonstrates *shadowing*. Shadowing occurs when a block argument hides a local variable that is defined outside the block. Since the outer ```a``` is shadowed, the ```a += 1``` has no effect on it. In fact, that statement has no effect at all.
+
+The internal ```a``` is not the same as the local variable ```a``` because of how the array is referenced.
+
+## Question 10: What's my Value? - 10
+
+**Q:** What will the following code print, and why? Don't run the code until you have tried to answer.
+
+```ruby
+a = 7
+array = [1, 2, 3]
+
+def my_value(ary)
+  ary.each do |b|
+    a += b
+  end
+end
+
+my_value(array)
+puts a
+```
+
+**A:**
+
+If you said this would issue an error message or raise an exception, you are correct. The error is:
+
+```
+undefined method `+' for nil:NilClass (NoMethodError)
+```
+
+a at the top level is not visible inside the block because the block is inside my_value, and methods are self-contained with respect to local variables. Since the outer a is not visible inside my_value, it isn't visible inside the block.
+
+# TEMPLATE
 
 ## Question 1
 
