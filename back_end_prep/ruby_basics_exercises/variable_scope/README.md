@@ -36,6 +36,8 @@ end
 
 my_value(a)
 puts a
+
+
 ```
 
 **A:**
@@ -77,17 +79,43 @@ This problem looks remarkably similar to the first problem in this set. However,
 
 The result is quite different. When we were working with a numeric variable, no changes were made to a. This was due to the fact that numbers are immutable, and assignment merely changes the object that a variable references. Now, though, Strings are mutable - they can be modified - and, in particular, the method String#[]= is a mutating method; it actually modifies the string. Since we are actually modifying the string referenced by b, and b references the same string as a, the result from printing a shows an update to the value of the string.
 
+## Question 5: What's my Value? - 5
 
+**Q:** What will the following code print, and why? Don't run the code until you have tried to answer.
 
+```ruby
+a = "Xyzzy"
 
-## Question 5
+def my_value(b)
+  b = 'yzzyX'
+end
 
-**Q:**
+my_value(a)
+puts a
+```
 
 **A:**
 
+```Xyzzy```
 
-## Question 6
+This problem is nearly identical to the previous problem, except this time we are assigning directly to the variable b. When my_value begins executing, b is set to reference the same string that is reference by a. If we modify that string by using b, then that modification is reflected in a; it's the same string.
+
+However, we are not modifying that string in this exercise. Instead, we are assigning a completely new string to b. Assignment never changes the value of an object; instead, it creates a new object, and then stores a reference to that object in the variable on the left. So, at the end of my_value, b references the string 'yzzyX', while a remains unchanged: it still references "Xyzzy".
+
+## Question 6: What's my Value? - 6
+
+**Q:** What will the following code print, and why? Don't run the code until you have tried to answer.
+
+```ruby
+a = 7
+
+def my_value(b)
+  b = a + a
+end
+
+my_value(a)
+puts a
+```
 
 **Q:**
 
