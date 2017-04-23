@@ -60,7 +60,7 @@ We begin by modifying the innermost block. This loop can be stopped by placing b
 
 The code in this exercise is considered bad practice. It's used to illustrate how to break out of a nested loop, not to encourage the use of nested loops.
 
-## Question 3
+## Question 3: Control the Loop
 
 **Q:** Modify the following loop so it iterates 5 times instead of just once.
 
@@ -97,19 +97,74 @@ loop do
 end
 ```
 
-## Question 4
+## Question 4: Loop on Command
 
-**Q:**
+**Q:** Modify the code below so the loop stops iterating when the user inputs 'yes'.
+
+```ruby
+loop do
+  puts 'Should I stop looping?'
+  answer = gets.chomp
+end
+```
 
 **A:**
 
+```ruby
+loop do
+  puts 'Should I stop looping?'
+  answer = gets.chomp
+  break if answer == 'yes'
+end
+```
 
-## Question 5
+This is a practical example of how a loop can be used to retrieve and handle user input. In the initial code, the loop continued iterating regardless of the input's value. To change that, we add break with an if condition. The condition, in this case, needs to be answer == 'yes'. This tells break to only execute if the input value is 'yes'.
 
-**Q:**
+We added a simple error message after break to demonstrate that break doesn't have to be at the end of the loop to do its job. Also, providing an error message can be useful in providing a better user experience when dealing with inputs.
+
+```ruby
+puts 'Incorrect answer. Please answer "yes".'
+```
+
+## Question 5: Say Hello
+
+**Q:** Modify the code below so "Hello!" is printed 5 times.
+
+```ruby
+say_hello = true
+
+while say_hello
+  puts 'Hello!'
+  say_hello = false
+end
+```
 
 **A:**
 
+```ruby
+say_hello = true
+
+i = 0
+
+while say_hello
+  puts 'Hello!'
+  i += 1
+  if i > 4
+  	say_hello = false
+  end
+end
+```
+
+```ruby
+say_hello = true
+count = 0
+
+while say_hello
+  puts 'Hello!'
+  count += 1
+  say_hello = false if count == 5
+end
+```
 
 ## Question 6
 
