@@ -188,18 +188,80 @@ end
 
 Although using #times may be simpler and lets you write less code, it's still important to understand the fundamentals of how a method like #times actually works. Just keep in mind that there's usually more than one way to accomplish a given task.
 
-## Question 6
+## Question 6: Print While
 
-**Q:**
+**Q:** Using a while loop, print 5 random numbers between 0 and 99. The code below shows an example of how to begin solving this exercise.
+
+```ruby
+numbers = []
+
+while <condition>
+  # ...
+end
+```
+
+Example output (your numbers will most likely be different):
+
+```
+62
+96
+31
+16
+36
+```
 
 **A:**
 
-## Question 7
+```ruby
+i = 0
 
-**Q:**
+while i < 5
+  puts rand(100)
+  i += 1
+end
+```
+
+```ruby
+numbers = []
+
+while numbers.size < 5
+  numbers << rand(100)
+end
+
+puts numbers
+```
+
+Implementing a while loop that iterates under set conditions should be fairly trivial. The more difficult part of this exercise is, perhaps, getting random numbers and keeping track of them. To accomplish this, we use #rand. This method works well because it returns a random number between 0 and one less than the number provided. In this case, that number is 100.
+
+Once the random number is returned, we want to avoid printing it immediately. If we simply printed the returned number, while would iterate infinitely. Instead, we want to add the returned number to an array. This way, we can tell whileto stop iterating after 5 numbers have been added to the array.
+
+## Question 7: Count Up
+
+**Q:** The following code outputs a countdown from 10 to 1. Modify the code so that it counts from 1 to 10 instead.
+
+```ruby
+count = 10
+
+until count == 0
+  puts count
+  count -= 1
+end
+```
 
 **A:**
 
+```ruby
+count = 1
+
+until count == 11
+  puts count
+  count += 1
+end
+```
+
+The until loop is the opposite of the while loop. while iterates until the condition evaluates to false. until iterates until the condition evaluates to true. In this case, the condition evaluates to true when count equals 0. We want it to be the opposite though. We would like until to iterate until count is greater than 10. We use greater than here so 10 is included in the output. If we used ==, then 9 would be the last number printed.
+
+There are two more things that need to be changed to fill the requirements. count should be initialized as 1 instead of 10 and, within the loop, count should add 1 instead of subtract 1.
 
 ## Question 8
 
