@@ -309,13 +309,70 @@ Using count helps us in two ways. First, it lets us control the number of iterat
 
 ## Question 9: That's Odd
 
-**Q:**
+**Q:** The code below shows an example of a for loop. Modify the code so that it only outputs i if i is an odd number.
+
+```ruby
+for i in 1..100
+  puts i
+end
+```
 
 **A:**
 
+```ruby
+for i in 1..100
+  puts i if i % 2 == 1
+end
+```
 
-## Question 10
+```ruby
+for i in 1..100
+  puts i if i.odd?
+end
+```
 
-**Q:**
+for loops aren't used very often in Ruby, but it's still important to know how they work. It's typically used to iterate over a collection. In this case, we use it to iterate over the range 1..100, therefore, the i variable represents the current iteration number. This makes it easy to count from 1 to 100 by outputting the value of i.
+
+For this exercise, we'd like to only output the odd numbers. We can do this by adding an if statement to #puts. We can tell #puts to only output i if i is an odd number by using the #odd? method on i.
+
+## Question 10: Greet Your Friends
+
+**Q:** Your friends just showed up! Given the following array of names, use a for loop to greet each friend individually.
+
+```ruby
+friends = ['Sarah', 'John', 'Hannah', 'Dave']
+```
+
+Expected output:
+
+```
+Hello, Sarah!
+Hello, John!
+Hello, Hannah!
+Hello, Dave!
+```
 
 **A:**
+
+```ruby
+friends = ['Sarah', 'John', 'Hannah', 'Dave']
+count = 0
+
+until count == friends.size
+  puts "Hello, " + friends[count] + "!"
+  count += 1
+end
+```
+
+```ruby
+friends = ['Sarah', 'John', 'Hannah', 'Dave']
+
+for friend in friends
+  puts "Hello, #{friend}!"
+end
+```
+
+The for loop is useful for looping over a set number of elements. Using for allows us to easily do something with each element in the given array. In this case, we want to output each name along with a greeting. We can do this by using the friend variable which represents the current element. We simply need to output our greeting and friend.
+
+When naming variables in a for loop it's typical to use the standard format: for friend in friends, for cat in cats, etc. This makes it clear that we're iterating over friends and doing something with each friend.
+
