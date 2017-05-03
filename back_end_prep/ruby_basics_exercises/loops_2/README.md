@@ -84,9 +84,11 @@ loop do
 end
 ```
 
+Inside the loop, we're assigning a random integer to number upon each iteration. Our goal for this exercise is to create a condition that stops the loop if number is between 0 and 10. There are a couple ways we could have implemented this, however, we chose to use the Comparable#between? method. #between? takes two arguments and returns a boolean, true or false, if the caller's value is between the two integers provided. In this case, we use it in an if condition that will execute break when #between? returns true.
+
 ## Question 3: Conditional Loop
 
-**Q:**
+**Q:** Using an if/else statement, run a loop that prints "The loop was processed!" one time if process_the_loop equals true. Print "The loop wasn't processed!" if process_the_loop equals false.
 
 **A:**
 
