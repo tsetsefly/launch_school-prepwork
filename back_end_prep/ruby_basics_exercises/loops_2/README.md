@@ -214,22 +214,87 @@ Now that we are handling the input properly, the next step is to stop the loop. 
 
 ## Question 6: Empty the Array
 
-**Q:** 
+**Q:** Given the array below, use loop to remove and print each name. Stop the loop once names doesn't contain any more elements.
+
+```ruby
+names = ['Sally', 'Joe', 'Lisa', 'Henry']
+```
+
+Keep in mind to only use loop, not while, until, etc.
 
 **A:**
+
+```ruby
+names = ['Sally', 'Joe', 'Lisa', 'Henry']
+
+loop do
+  name = names.pop
+  puts name
+  break if names.size == 0
+end
+```
+
+```ruby
+names = ['Sally', 'Joe', 'Lisa', 'Henry']
+
+loop do
+  puts names.shift
+  break if names.empty?
+end
+```
+
+Loops are really useful for iterating through arrays, therefore, it's important to know how to stop them when you need. In this case, we want to stop the loop once names is empty. To do this, we first need to figure out how to print each name while removing it from the array. There are a couple ways to do this, but we've chosen to use the Array#shift method. #shift removes the first element from an array and returns its value. This allows us to simply #puts the returned value.
+
+Now that we're removing an element from names upon each iteration, we can stop the loop once the array is empty. Array#empty? is a really handy method for situations like this. #empty? simply checks to see if there are any elements in an array and returns a boolean. This allows us to add a break and an if names.empty? condition to stop the loop.
+
+Our solution prints the names from first (Sally) to last (Henry). Can you change this to print the names from last to first?
 
 ## Question 7: Stop Counting
 
-**Q:**
+**Q:** The method below counts from 0 to 4. Modify the block so that it prints the current number and stops iterating when the current number equals 2.
+
+```ruby
+5.times do |index|
+  # ...
+end
+```
 
 **A:**
 
+```ruby
+5.times do |index|
+  puts index
+  break if index == 2
+end
+```
+
+The times method counts from 0 to one less than the specified number. In this case, that number is 5. The block parameter index represents the current iteration number. We can print the current number with puts index.
+
+To stop the loop, we can simply add break. However, we want to only stop iterating when the current number equals 2. We can do this by adding the if index == 2 condition to break.
 
 ## Question 8: Only Even
 
-**Q:**
+**Q:** Using next, modify the code below so that it only prints even numbers.
+
+```ruby
+number = 0
+
+until number == 10
+  number += 1
+  puts number
+end
+```
 
 **A:**
+
+```ruby
+number = 0
+
+until number == 10
+  number += 1
+  puts number
+end
+```
 
 ## Question 9: First to Five
 
