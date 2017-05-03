@@ -57,17 +57,122 @@ What happens if you enter a non-numeric value for the age?
 
 ## Question 3: Print Something (Part 1)
 
-**Q:**
+**Q:** Write a program that asks the user whether they want the program to print "something", then print it if the user enters y. Otherwise, print nothing.
+
+Examples:
+
+```
+$ ruby something.rb
+>> Do you want me to print something? (y/n)
+y
+something
+
+$ ruby something.rb
+>> Do you want me to print something? (y/n)
+n
+
+$ ruby something.rb
+>> Do you want me to print something? (y/n)
+help
+```
 
 **A:**
 
+```ruby
+puts "Do you want me to print something? (y/n)"
+response = gets.chomp
+if response == "y"
+  puts "something"
+end
+```
+
+```ruby
+puts '>> Do you want me to print something? (y/n)'
+choice = gets.chomp
+puts 'something' if choice == 'y'
+```
+
+Here we display an appropriate prompt using #puts, obtain the user's input with #gets, and finally, print something with #puts if the user entered a y.
+
+Note that we now need to use #chomp on the return value of #gets; if we don't, the newline character will be included in choice, and choice == 'y' will return false.
+
+Further Exploration
+
+What happens if you type Y (in uppercase) instead of y in response to the prompt? This is a bad user experience: when obtaining input from a user, you should almost always allow both uppercase and lowercase entries. Can you modify this program so that it prints "something" if the user enters Y or y?
 
 ## Question 4: Print Something (Part 2)
 
-**Q:**
+**Q:** In the previous exercise, you wrote a program that asks the user if they want the program to print "something". However, this program recognized any input as valid: if you answered anything but y, it treated it as an n response, and quit without printing anything.
+
+Modify your program so it prints an error message for any inputs that aren't y or n, and then asks you to try again. Keep asking for a response until you receive a valid y or n response. In addition, your program should allow both Y and N (uppercase) responses; case sensitive input is generally a poor user interface choice. Whenever possible, accept both uppercase and lowercase inputs.
+
+Examples:
+
+```
+$ ruby something2.rb
+>> Do you want me to print something? (y/n)
+y
+something
+
+$ ruby something2.rb
+>> Do you want me to print something? (y/n)
+help
+>> Invalid input! Please enter y or n
+>> Do you want me to print something? (y/n)
+Y
+something
+
+$ ruby something2.rb
+>> Do you want me to print something? (y/n)
+N
+
+$ ruby something2.rb
+>> Do you want me to print something? (y/n)
+NO
+>> Invalid input! Please enter y or n
+>> Do you want me to print something? (y/n)
+n
+```
 
 **A:**
 
+```ruby
+response = nil
+
+until response == "n"
+  puts "Do you want me to print something? (y/n)"
+  response = gets.chomp.downcase
+  if response == "y"
+    puts "something"
+    break
+  elsif response != "n"
+    puts "Invalid input! Please enter y or n"
+  end
+end
+```
+
+```ruby
+choice = nil
+loop do
+  puts '>> Do you want me to print something? (y/n)'
+  choice = gets.chomp.downcase
+  break if %w(y n).include?(choice)
+  puts '>> Invalid input! Please enter y or n'
+end
+puts 'something' if choice == 'y'
+```
+
+The solution to this exercise will become a familiar pattern early during your Launch School learning. We use a plain loop to solicit inputs until we have a valid input, then exit that loop.
+
+In most such loops, we will need the user's choice after the loop finishes running. Since variables created inside of loops are scoped in such a way that they aren't visible outside the loop, we must start by first defining the variable we want to use. Here we start by setting choice to nil; this guarantees that choice will be available both inside the loop and after the loop has finished running.
+
+Inside the loop, we display our prompt, and then use #gets to read the user's input. We also use #chomp in this case to get rid of the newline, and #downcase to convert the input to lowercase.
+
+Next, we use break to exit the loop if the user's input is a valid choice. Here we use #include? and apply it against an Array that contains the list of valid entries (y and n). We use the %w() shortcut syntax to represent the Array since it is easier to read %w(y n) than ['y', 'n'].
+
+If we have an invalid response, we display an error message, after which the loop repeats. It continues repeating until a valid choice is entered.
+
+After the loop finishes, we perform the requested action: we print '"something"', but only if the user's choice was y.
 
 ## Question 5: Launch School Printer (Part 1)
 
