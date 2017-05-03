@@ -292,19 +292,86 @@ number = 0
 
 until number == 10
   number += 1
+  next if number.odd?
   puts number
 end
 ```
 
+Sometimes when using a loop, you need to skip to the next iteration. That's where next comes in. next lets you skip to the next iteration based on certain conditions. In this exercise, we use next to skip to the next iteration when number is odd. We can use the method Integer#odd? to evaluate number and return true if it's an odd number.
+
+Further Exploration
+
+Why did next have to be placed after the incrementation of number and before #puts?
+
 ## Question 9: First to Five
 
-**Q:**
+**Q:** The following code increments number_a and number_b by either 0 or 1. loop is used so that the variables can be incremented more than once, however, break stops the loop after the first iteration. Use next to modify the code so that the loop iterates until either number_a or number_b equals 5. Print "5 was reached!" before breaking out of the loop.
+
+```ruby
+number_a = 0
+number_b = 0
+
+loop do
+  number_a += rand(2)
+  number_b += rand(2)
+
+  break
+end
+```
 
 **A:**
 
+```ruby
+number_a = 0
+number_b = 0
+
+loop do
+  number_a += rand(2)
+  number_b += rand(2)
+
+  next unless number_a == 5 || number_b == 5
+  puts "5 was reached!"  
+end
+```
 
 ## Question 10: Greeting
 
-**Q:**
+**Q:** Given the code below, use a while loop to print "Hello!" twice.
+
+```ruby
+def greeting
+  puts 'Hello!'
+end
+
+number_of_greetings = 2
+```
 
 **A:**
+
+```ruby
+def greeting
+  puts 'Hello!'
+end
+
+number_of_greetings = 2
+
+while number_of_greetings > 0
+  greeting
+  number_of_greetings = number_of_greetings - 1
+end
+```
+
+```ruby
+def greeting
+  puts 'Hello!'
+end
+
+number_of_greetings = 2
+
+while number_of_greetings > 0
+  greeting
+  number_of_greetings -= 1
+end
+```
+
+Using a loop makes it easy to do something multiple times. In this case, we want to call the greeting method two times. To do this, we'll make our conditional evaluate to true until number_of_greetings is less than 1. We control the value of number_of_greetings by subtracting 1 on each iteration. Lastly, to print "Hello!" we just need to invoke the greeting method provided to us.
