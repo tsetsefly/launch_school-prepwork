@@ -53,11 +53,36 @@ end
 There are three main things going on inside this loop. First, count adds 1 to itself upon each iteration. This part was initially provided to you. Second, break is checking the value of count upon each iteration and will stop the loop if count equals 5. Lastly, there is an if/else statement that prints whether a number is even or odd. The if condition takes advantage of the Integer#even? method to check whether count is an even number. If it is, then "#{count} is even!" will be printed, if not, then "#{count} is odd!" will be printed.
 
 ## Question 2: Catch the Number
+  
+**Q:** Modify the following code so that the loop stops if number is between 0 and 10.
 
-**Q:**
+```ruby
+loop do
+  number = rand(100)
+  puts number
+end
+```
 
 **A:**
 
+```ruby
+loop do
+  number = rand(100)
+  puts number
+  break if number < 11 && number > -1
+end
+```
+
+```ruby
+loop do
+  number = rand(100)
+  puts number
+
+  if number.between?(0, 10)
+    break
+  end
+end
+```
 
 ## Question 3: Conditional Loop
 
