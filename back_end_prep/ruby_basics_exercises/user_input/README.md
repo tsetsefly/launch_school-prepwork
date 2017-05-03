@@ -228,9 +228,26 @@ Once we have the number of lines to print, it's a simple matter to just print th
 
 ## Question 6: Passwords
 
-**Q:** 
+**Q:** Write a program that displays a welcome message, but only after the user enters the correct password, where the password is a string that is defined as a constant in your program. Keep asking for the password until the user enters the correct password.
+
+Examples:
+
+```
+$ ruby password.rb
+>> Please enter your password:
+Hello
+>> Invalid password!
+>> Please enter your password:
+Secret
+>> Invalid password!
+>> Please enter your password:
+SecreT
+Welcome!
+```
 
 **A:**
+
+
 
 ## Question 7: User Name and Password
 
