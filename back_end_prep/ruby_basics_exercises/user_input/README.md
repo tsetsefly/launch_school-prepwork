@@ -409,14 +409,123 @@ a
 **A:**
 
 ```ruby
+def valid_number?(number_string)
+  number_string.to_i.to_s == number_string
+end
 
+numerator = nil
+denominator = nil
+quotient = nil
+
+loop do
+  puts ">> Please enter the numerator:"
+  numerator = gets.chomp
+  break if valid_number?(numerator)
+  puts ">> Invalid input. Only integers are allowed."
+end
+numerator = numerator.to_i
+
+loop do
+  puts ">> Please enter the denominator:"
+  denominator = gets.chomp
+  break if valid_number?(denominator) && denominator != '0'
+  if denominator == '0'
+    puts ">> Invalid input. A denominator of 0 is not allowed."
+  else
+    puts ">> Invalid input. Only integers are allowed."
+  end
+end
+denominator = denominator.to_i
+
+quotient = numerator / denominator
+
+puts "#{numerator} / #{denominator} is #{quotient}"
 ```
+
+```ruby
+def valid_number?(number_string)
+  number_string.to_i.to_s == number_string
+end
+
+numerator = nil
+loop do
+  puts '>> Please enter the numerator:'
+  numerator = gets.chomp
+
+  break if valid_number?(numerator)
+  puts '>> Invalid input. Only integers are allowed.'
+end
+
+denominator = nil
+loop do
+  puts '>> Please enter the denominator:'
+  denominator = gets.chomp
+
+  if denominator == '0'
+    puts '>> Invalid input. A denominator of 0 is not allowed.'
+  else
+    break if valid_number?(denominator)
+    puts '>> Invalid input. Only integers are allowed.'
+  end
+end
+
+result = numerator.to_i / denominator.to_i
+puts "#{numerator} / #{denominator} is #{result}"
+```
+
+In this exercise, we solicit two pieces of independent information, so we need separate loops for each number. The first should look reasonably familiar by now, but the second is a bit more complex due to the additional requirement that the denominator not be 0. There are a number of different ways to do this; we just chose a way that we feel is reasonably clear.
+
+In our last two lines, we convert the two inputs to integers, divide them, and then print the result. Note that we are doing integer division, so 9 / 4 is 2, not 2.25.
 
 ## Question 9: Launch School Printer (Part 2)
 
-**Q:**
+**Q:** In an earlier exercise, you wrote a program that prints 'Launch School is the best!' repeatedly until a certain number of lines have been printed. Our solution looked like this:
+
+```ruby
+number_of_lines = nil
+loop do
+  puts '>> How many output lines do you want? Enter a number >= 3:'
+  number_of_lines = gets.to_i
+  break if number_of_lines >= 3
+  puts ">> That's not enough lines."
+end
+
+while number_of_lines > 0
+  puts 'Launch School is the best!'
+  number_of_lines -= 1
+end
+```
+
+Modify this program so it repeats itself after each input/print iteration, asking for a new number each time through. The program should keep running until the user enters q or Q.
+
+Examples:
+
+```
+$ ruby lsprint2.rb
+>> How many output lines do you want? Enter a number >= 3 (Q to quit):
+5
+Launch School is the best!
+Launch School is the best!
+Launch School is the best!
+Launch School is the best!
+Launch School is the best!
+>> How many output lines do you want? Enter a number >= 3 (Q to quit):
+2
+>> That's not enough lines.
+>> How many output lines do you want? Enter a number >= 3 (Q to quit):
+3
+Launch School is the best!
+Launch School is the best!
+Launch School is the best!
+>> How many output lines do you want? Enter a number >= 3 (Q to quit):
+q
+```
 
 **A:**
+
+```ruby
+
+```
 
 
 ## Question 10: Opposites Attract
