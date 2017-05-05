@@ -10,6 +10,19 @@ Hello World
 
 **A:**
 
+```ruby
+def hello
+	return "Hello"
+end
+
+def world
+	return "World"
+end
+
+puts "#{hello} #{world}"
+```
+
+To do anything with the methods, we first have to define them. We've chosen to define our methods as hello and world. We've written both methods to only do one thing: return a string. This makes it easy for us to print the desired strings simply by calling the methods with #puts.
 
 ## Question 2: 	Greeting Through Methods (Part 2)
 
