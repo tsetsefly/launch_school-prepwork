@@ -350,15 +350,62 @@ activities = ['walking', 'running', 'cycling']
 puts sentence(name(names), activity(activities))
 ```
 
+Both methods, name and activity, are simple enough. We chose to use Array#sample to grab a random value from the array and return it from the method. Then, we pass those methods as arguments into sentence which lets us use the return value however we want. In this case, we want to combine them into a sentence. Notice that we aren't printing the string from within the method, instead, we're returning it so that it can be printed outside the method.
+
 ## Question 9: Print Me (Part 1)
 
-**Q:**
+**Q:** Write a method named print_me that prints "I'm printing within the method!" when invoked.
+
+```
+print_me
+```
 
 **A:**
 
+```ruby
+def print_me
+	puts "I'm printing within the method!"
+end
+
+print_me
+```
+
+In previous exercises we've used #puts both inside and outside methods. When you use #puts inside a method, you're outputting one thing and returning another. #puts outputs whatever it's given and returns nil. In this case, we're printing the value inside the method, which means the method's return value is nil.
+
+We can verify that #puts returns nil by using irb.
+
+```
+irb :001 > puts "Hello World!"
+Hello World!
+=> nil
+```
+
+The second line shows what was printed to the screen while the third line shows the return value. Looking at this, we can see that #puts outputs "Hello World!" and returns nil.
 
 ## Question 10: Print Me (Part 2)
 
-**Q:**
+**Q:** Write a method named print_me that returns "I'm printing the return value!" when using the following code.
+
+```
+print_me
+```
 
 **A:**
+
+```ruby
+def print_me
+	return "I'm printing within the method!"
+end
+
+puts print_me
+```
+
+```ruby
+def print_me
+	"I'm printing within the method!"
+end
+
+puts print_me
+```
+
+When you don't use #puts within the method or when you invoke the method, then nothing will be printed. This doesn't mean that there's nothing available to print though. Methods will always return something. In this case, print_me is returning the string "I'm printing the return value!". Therefore, to print that string, all we need to do is place #puts before the method invocation.
