@@ -196,7 +196,36 @@ The cat's name is Ginger.
 
 **A:**
 
+```ruby
+def dog
+  return name
+end
 
+def cat(name)
+  return name
+end
+
+puts "The dog's name is #{dog('Spot')}."
+puts "The cat's name is #{cat('Ginger')}."
+```
+
+When running the original code, you should have gotten an error called ArgumentError that looks like this:
+
+```
+wrong number of arguments (given 1, expected 0) (ArgumentError)
+```
+
+This error is telling you that dog passed in an argument when it was invoked. However, dog doesn't accept any arguments. To fix this, we need to change dog so that it accepts one argument.
+
+After fixing the error and running the code again, you should encounter the same type of error. It should look like this:
+
+```
+wrong number of arguments (given 0, expected 1) (ArgumentError)
+```
+
+This error is nearly identical to the first one, except it's reversed. Here, cat accepts one argument. However, no arguments were passed in when cat was invoked. To fix this, we need to add an argument when we invoke the method, like this: cat('Ginger').
+
+When you're writing methods, it's important to keep track of how many arguments the method accepts and how many it's given upon invocation. Both numbers need to match or an error will be thrown.
 
 ## Question 6: Name Not Found
 
