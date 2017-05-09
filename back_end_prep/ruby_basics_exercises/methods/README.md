@@ -229,16 +229,69 @@ When you're writing methods, it's important to keep track of how many arguments 
 
 ## Question 6: Name Not Found
 
-**Q:**
+**Q:** Write a method that accepts one argument, but doesn't require it. The parameter should default to the string "Bob" if no argument is given. The method's return value should be the value of the argument.
+
+```ruby
+puts assign_name == 'Bob'
+puts assign_name('Kevin') == 'Kevin'
+```
+
+The code should output true twice.
 
 **A:**
+
+```ruby
+def assign_name(name='Bob')
+	name
+end
+
+puts assign_name == 'Bob'
+puts assign_name('Kevin') == 'Kevin'
+```
+
+The method assign_name is written the same as any other method except for one key difference: it has a default parameter. This means that it accepts one argument, but doesn't break if that argument isn't given. It will simply assign the parameter to the default value which, in this case, is "Bob".
 
 ## Question 7: Multiply the Sum
 
-**Q:**
+**Q:** Write the following methods so that each output is true.
+
+```ruby
+puts add(2, 2) == 4
+puts add(5, 4) == 9
+puts multiply(add(2, 2), add(5, 4)) == 36
+```
 
 **A:**
 
+```ruby
+def add
+	return 
+end
+
+def multiply
+
+end
+
+puts add(2, 2) == 4
+puts add(5, 4) == 9
+puts multiply(add(2, 2), add(5, 4)) == 36
+```
+
+```ruby
+def add(num1, num2)
+	return num1 + num2
+end
+
+def multiply(num1, num2)
+	return num1 * num2
+end
+
+puts add(2, 2) == 4
+puts add(5, 4) == 9
+puts multiply(add(2, 2), add(5, 4)) == 36
+```
+
+The goal here is to write two methods, add and multiply, that do simple math operations. We use the + and * operators inside the methods to add or multiply the numbers then we return the results. By returning the results, we can use the add method as an argument for multiply just like we would with a variable.
 
 ## Question 8: Random Sentence
 
