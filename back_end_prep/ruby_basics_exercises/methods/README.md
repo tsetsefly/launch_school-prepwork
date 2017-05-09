@@ -136,16 +136,66 @@ Returns "Toyota Corolla" vs "nil" for the prior example.
 
 ## Question 4: Day or Night?
 
-**Q:**
+**Q:** The variable below will be randomly assigned as true or false. Write a method named time_of_day that, given a boolean as an argument, prints "It's daytime!" if the boolean is true and "It's nighttime!" if it's false. Pass daylight into the method as the argument to determine whether it's day or night.
+
+```ruby
+daylight = [true, false].sample
+```
 
 **A:**
 
+```ruby
+def time_of_day(light)
+	light_status = nil
+	light_status = (light ? "It's daytime!" : "It's nighttime!");
+	puts light_status
+end
+
+daylight = [true, false].sample
+time_of_day(daylight)
+```
+
+```ruby
+def time_of_day(daylight)
+  if daylight
+    puts "It's daytime!"
+  else
+    puts "It's nighttime!"
+  end
+end
+
+daylight = [true, false].sample
+time_of_day(daylight)
+```
+
+Our time_of_day method is simple enough. It accepts one argument, daylight, and proceeds to use that argument as an if conditional. If daylight evaluates to true, then "It's daytime!" will be printed. If it evaluates to false, then "It's nighttime!" will be printed. Also, notice that we use #puts within the if/else statement and not when we invoke the method.
 
 ## Question 5: Naming Animals
 
-**Q:**
+**Q:** Fix the following code so that the names are printed as expected.
+
+```ruby
+def dog
+  return name
+end
+
+def cat(name)
+  return name
+end
+
+puts "The dog's name is #{dog('Spot')}."
+puts "The cat's name is #{cat}."
+```
+
+Expected output:
+
+```
+The dog's name is Spot.
+The cat's name is Ginger.
+```
 
 **A:**
+
 
 
 ## Question 6: Name Not Found
