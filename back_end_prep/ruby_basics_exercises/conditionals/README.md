@@ -30,14 +30,39 @@ Knowing this, we can compare sun with 'visible' in our if condition. If this com
 
 ## Question 2: Unpredictable Weather (Part 2)
 
-**Q:**
+**Q:** In the code below, sun is randomly assigned as 'visible' or 'hidden'.
+
+```ruby
+sun = ['visible', 'hidden'].sample
+```
+
+Write an unless statement that prints "The clouds are blocking the sun!" unless sun equals 'visible'.
 
 **A:**
 
+```ruby
+sun = ['visible', 'hidden'].sample
+
+unless sun == 'visible'
+	puts 'THe clouds are blocking the sun!'
+end
+```
+
+This exercise should look familiar if you completed the previous one. The difference is, we use the unless statement, which is actually the opposite of the if statement.
+
+Looking at the condition in our solution, you'll notice that it didn't change from the last exercise. This still works because instead of saying "do something if the sun is visible", we're essentially saying "do something if the sun is hidden". In code, this looks like unless sun == 'visible'.
 
 ## Question 3: Unpredictable Weather (Part 3)
 
-**Q:**
+**Q:** In the code below, sun is randomly assigned as 'visible' or 'hidden'.
+
+```ruby
+sun = ['visible', 'hidden'].sample
+```
+
+Write an if statement that prints "The sun is so bright!" if sun equals visible. Also, write an unless statement that prints "The clouds are blocking the sun!" unless sun equals visible.
+
+When writing these statements, take advantage of Ruby's expressiveness and use statement modifiers instead of an if...end statement to print results only when some condition is met or not met.
 
 **A:**
 
