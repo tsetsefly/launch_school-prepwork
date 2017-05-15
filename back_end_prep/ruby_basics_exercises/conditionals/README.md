@@ -133,16 +133,59 @@ The key thing to keep in mind when determining what the code will print is that 
 
 ## Question 6: Stoplight (Part 1)
 
-**Q:**
+**Q:** In the code below, stoplight is randomly assigned as 'green', 'yellow', or 'red'.
+
+```ruby
+stoplight = ['green', 'yellow', 'red'].sample
+```
+
+Write a case statement that prints "Go!" if stoplight equals 'green', "Slow down!" if stoplight equals 'yellow', and "Stop!" if stoplight equals 'red'.
 
 **A:**
+
+```ruby
+stoplight = ['green', 'yellow', 'red'].sample
+
+case stoplight
+when 'green'
+	puts 'Go!'
+when 'yellow'
+	puts 'Slow down!'
+when 'red'
+	puts 'Stop!'
+end
+```
+
+Case statements are typically used when comparing multiple values to a single case. For each comparison, we use the reserve word when, like this:
+
+```ruby
+when <condition>
+```
+
+Following the condition, we add the operation that should be performed if the condition evaluates to true. We can repeat this pattern as many times as we'd like. For this exercise, however, we only need to repeat it three times.
 
 ## Question 7: Stoplight (Part 2)
 
-**Q:**
+**Q:** Convert the following case statement to an if statement.
+
+```ruby
+stoplight = ['green', 'yellow', 'red'].sample
+
+case stoplight
+when 'green'
+  puts 'Go!'
+when 'yellow'
+  puts 'Slow down!'
+else
+  puts 'Stop!'
+end
+```
 
 **A:**
 
+```ruby
+
+```
 
 ## Question 8: Sleep Alert
 
