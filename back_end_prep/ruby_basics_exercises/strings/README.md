@@ -209,9 +209,33 @@ Expected output:
 
 **A:**
 
+```ruby
+state = 'tExAs'
+
+puts state.capitalize
+```
+
+```ruby
+state = 'tExAs'
+
+state.capitalize!
+puts state
+```
+
+Strings are commonly used to hold formatted values. Those values won't always be properly formatted, however. To ensure the correct formatting in this case, we use String#capitalize! in the solution. We use the destructive version of String#capitalize to satisfy the requirement that state is actually modified. #capitalize! mutates the caller, therefore, when we invoke puts state, the correctly formatted value will be printed, and state will continue to have the corrected value afterwards.
+
 ## Question 7: Goodbye, not Hello
 
-**Q:**
+**Q:** Given the following code, invoke a destructive method on greeting so that Goodbye! is printed instead of Hello!.
+
+```ruby
+greeting = 'Hello!'
+puts greeting
+```
+
+Expected output:
+
+```Goodbye!```
 
 **A:**
 
