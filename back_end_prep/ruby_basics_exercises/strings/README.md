@@ -330,11 +330,78 @@ elephants
 airplanes
 ```
 
-**A:**
+**A:** 
 
+```ruby
+words = 'car human elephant airplane'
+
+words.split(' ').each do |word|
+	puts word << 's'
+end
+```
+
+To iterate over each word in words we first need to split the string into separate words. As discussed in the previous exercise, String#split will split elements in a string according to the provided argument. In this case, we pass in a string consisting of a single space, which means #split will return an array containing each word.
+
+We then invoke Array#each on the return value of #split, which lets us perform an action for each word. Our goal is to print the plural of each word, therefore, we simply append 's' to the word and invoke #puts.
 
 ## Question 10: Are You There?
 
-**Q:**
+**Q:** Using the following code, print true if colors includes the color 'yellow' and print false if it doesn't. Then, print true if colors includes the color 'purple' and print false if it doesn't.
+
+```ruby
+colors = 'blue pink yellow orange'
+```
+
+Expected output:
+
+```
+true
+false
+```
 
 **A:**
+
+```ruby
+colors = 'blue pink yellow orange'
+
+puts colors.include? 'yellow'
+puts colors.include? 'purple'
+```
+
+To check if a given string includes a specific character or word, we can use String's #include? method. #include? checks the calling string for the provided argument and returns true if the argument is included and false if it isn't.
+
+This way of checking a string for a value is also useful for validating user input. Say you want to return true if a user enters a form of confirmation, like 'yes' or 'yeah', you could do something like this:
+
+```ruby
+user_input = gets.chomp.downcase
+'yes yeah'.include?(user_input)
+```
+
+This is useful, however, it would be more appropriate to use an array in this case, like so:
+
+```ruby
+user_input = gets.chomp.downcase
+['yes', 'yeah'].include?(user_input)
+```
+
+The result is the same, but using an array is preferred when there's more than one value.
+
+Further Exploration
+
+Let's say color is changed to the following value:
+
+```ruby
+colors = 'blue boredom yellow'
+```
+
+...and we invoke #include? as we did before:
+
+```ruby
+puts colors.include?('red')
+```
+
+What will the output be? Why?
+
+```true```
+
+Because 'red' is inside 'boREDom'
