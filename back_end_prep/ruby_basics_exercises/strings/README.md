@@ -239,16 +239,96 @@ Expected output:
 
 **A:**
 
+```ruby
+greeting = 'Hello!'
+
+greeting.gsub!('Hello', 'Goodbye')
+puts greeting
+```
+
+Ruby provides a great String method named String#gsub! that allows us to replace specific characters within the string by modifying the original object. In the solution, we use the destructive version of #gsub by invoking it on greeting before invoking #puts. We could have also used the non-destructive version, like so:
+
+```ruby
+greeting = 'Hello!'
+
+puts greeting.gsub('Hello', 'Goodbye')
+```
+
+This works because #gsub returns the modified string.
 
 ## Question 8: Print the Alphabet
 
-**Q:**
+**Q:** Using the following code, split the value of alphabet by individual characters and print each character.
+
+```ruby
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+```
+
+Expected output:
+
+```
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+```
 
 **A:**
 
+```ruby
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+i = 0
+while i < alphabet.length
+	puts alphabet[i]
+	i = i + 1
+end
+```
+
+```ruby
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+puts alphabet.split('')
+```
+
+It's common to split strings by character or words. In fact, Ruby provides a method named String#split that conveniently does this for us. By invoking #split on alphabet and passing an empty string as an argument, we can separate individual characters in alphabet. To print each character, we simply need to use #puts because #split returns an array containing each character as its own element.
+
 ## Question 9: Pluralize
 
-**Q:**
+**Q:** Given the following code, use Array#each to print the plural of each word in words.
+
+```ruby
+words = 'car human elephant airplane'
+```
+
+Expected output:
+
+```
+cars
+humans
+elephants
+airplanes
+```
 
 **A:**
 
