@@ -84,12 +84,41 @@ I have a pet fish!
 
 **A:**
 
+```ruby
+pets = ['cat', 'dog', 'fish', 'lizard']
 
+pets.pop
+my_pets = pets[2]
+puts "I have a pet " + my_pets.to_s + "!"
+```
 
+Array#pop is used to remove and return the last element of an array.
+
+```ruby
+my_pets.pop
+
+puts "I have a pet #{my_pets[0]}!"
+```
+
+Knowing how to modify a data structure, like an array, is crucial to using them in your programs. In our solution, we use #pop to remove the last element from pets. We're able to use this method because 'lizard' is the last element. If it wasn't, we'd have to remove it some other way.
+
+The key thing to note here when printing my_pets is that my_pets is still an array. It looks like this: ['fish']. Just because it only has one element doesn't mean it somehow converted to a string. Arrays can contain any number of elements, even none.
 
 ## Question 4: One Isn't Enough
 
-**Q:**
+**Q:** Using the code below, select 'dog' from pets, add the return value to my_pets, then print the value of my_pets.
+
+```ruby
+pets = ['cat', 'dog', 'fish', 'lizard']
+my_pets = pets[2..3]
+my_pets.pop
+```
+
+Expected output:
+
+```
+I have a pet fish and a pet dog!
+```
 
 **A:**
 
