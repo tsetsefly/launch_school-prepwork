@@ -122,10 +122,37 @@ I have a pet fish and a pet dog!
 
 **A:**
 
+```ruby
+pets = ['cat', 'dog', 'fish', 'lizard']
+my_pets = pets[2..3]
+my_pets.pop
+
+my_pets.push(pets[1])
+puts "I have a pet #{my_pets[0]} and a pet #{my_pets[1]}!"
+```
+
+In the previous exercise, we learned how to remove an element from an array. Here we do the opposite and add an element to an array using #push. When using #push, you pass in the element you want to add and it will be added to the end of the specified array. In this case, we selected 'dog' from pets and added it to my_pets.
+
+Note that my_pets is still an array. Therefore, when we print my_pets we have to select the index of each element, 'fish' and 'dog'.
 
 ## Question 5: What Color Are You?
 
-**Q:**
+**Q:** In the code below, an array containing different types of colors is assigned to colors.
+
+```ruby
+colors = ['red', 'yellow', 'purple', 'green']
+```
+
+Use Array#each to iterate over colors and print each element.
+
+Expected output:
+
+```
+I'm the color red!
+I'm the color yellow!
+I'm the color purple!
+I'm the color green!
+```
 
 **A:**
 
