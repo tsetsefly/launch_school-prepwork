@@ -156,6 +156,15 @@ I'm the color green!
 
 **A:**
 
+```ruby
+colors = ['red', 'yellow', 'purple', 'green']
+
+colors.each do |x|
+	puts "I'm the color #{x}!"
+end
+```
+
+Iteration is a key task when it comes to Arrays. When using #each, it's important to note the block parameter: here we use color. This represents the element in the current iteration and can be named whatever you want. Knowing this, it is easy to print each element simply by using #puts.
 
 ## Question 6: Doubled
 
